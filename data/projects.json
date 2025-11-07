@@ -1,0 +1,9 @@
+[
+  {
+    "id": "project-1",
+    "title": "wilfried-lafaye.fr",
+    "description": "Repository hosting the source code and assets of my personal website, including HTML, CSS, JS, and deployment resources.",
+    "technologies": ["HTML", "CSS", "JavaScript", "React", "Next.js", "GitHub Pages"],
+    "link": "projects/project-1.html"
+  }
+]

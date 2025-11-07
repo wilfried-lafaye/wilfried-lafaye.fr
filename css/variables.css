@@ -1,0 +1,12 @@
+:root {
+  --primary-color: #2563eb; /* bleu moderne plus vif */
+  --accent-color: #f97316;  /* orange doux plus chaleureux */
+  --text-color: #1f2937;    /* gris anthracite, plus doux pour le texte */
+  --bg-color: #f3f4f6;      /* gris clair neutre */
+  --font-family: "Inter", sans-serif; /* police moderne et lisible */
+  
+  /* Ajouts pour modernité */
+  --border-radius: 12px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --transition-speed: 0.3s;
+}
