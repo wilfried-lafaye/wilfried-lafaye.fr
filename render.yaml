@@ -2,7 +2,7 @@ services:
   - type: web
     name: backend
     env: node
-    plan: free
+
     buildCommand: npm install
     startCommand: node server.js
     rootDir: backend
@@ -13,7 +13,7 @@ services:
   - type: web
     name: python-demo
     env: python
-    plan: free
+
     rootDir: services/python-demo
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
@@ -22,6 +22,6 @@ services:
   - type: web
     name: frontend
     env: static
-    plan: free
+
     rootDir: frontend
     staticPublishPath: ./
