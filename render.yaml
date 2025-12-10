@@ -29,7 +29,7 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.0
 
-staticSites:
-  - name: frontend
+  - type: static
+    name: frontend
     rootDir: frontend
     publishPath: ./
