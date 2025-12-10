@@ -29,7 +29,9 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.0
 
-  - type: static
+  - type: web
     name: frontend
+    env: static
+    plan: free
     rootDir: frontend
-    publishPath: ./
+    staticPublishPath: ./
