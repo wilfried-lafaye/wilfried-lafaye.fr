@@ -30,7 +30,7 @@ services:
         value: 3.11.0
 
   - type: web
-    name: frontend
+    name: docs
     env: static
-    rootDir: frontend
+    rootDir: docs
     staticPublishPath: ./

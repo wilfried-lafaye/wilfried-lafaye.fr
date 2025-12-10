@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Node / Web
+node_modules/
+dist/
+build/
+.env
+.env.local
+.DS_Store
+
+# Temporary files & Media output
+temp_audio/
+uploads/
+processed/
+*.wav
+*.mp3
+*.flac
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

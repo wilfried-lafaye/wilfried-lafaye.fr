@@ -4,8 +4,10 @@ async function loadExperience() {
   const container = document.querySelector("#experience-list");
 
   container.innerHTML = experience.map(exp => `
-    <div class="experience-item">
-      <h3>${exp.years} – ${exp.title} @ ${exp.company}</h3>
+    <div class="experience-card">
+      <h3>${exp.title}</h3>
+      <span class="role">@ ${exp.company}</span>
+      <p class="date">${exp.years}</p>
       <p>${exp.description}</p>
     </div>
   `).join('');

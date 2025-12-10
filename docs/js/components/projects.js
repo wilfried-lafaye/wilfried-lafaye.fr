@@ -4,11 +4,15 @@ async function loadProjects() {
   const container = document.querySelector("#projects-list");
 
   container.innerHTML = projects.map(project => `
-    <div class="project-card">
-      <h3>${project.title}</h3>
-      <p>${project.description}</p>
-      <a href="${project.link}" class="project-link">View Details</a>
+  <div class="project-card">
+    <div class="tags">
+      <span class="tag">Active</span>
     </div>
+    <h3>${project.title}</h3>
+    <p>${project.description}</p>
+    <a href="${project.link}" class="btn-secondary" style="margin-top:auto;">View Project &rarr;</a>
+  </div>
   `).join('');
 }
 document.addEventListener("DOMContentLoaded", loadProjects);
+

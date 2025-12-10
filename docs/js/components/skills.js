@@ -3,6 +3,6 @@ async function loadSkills() {
   const skills = await response.json();
   const container = document.querySelector("#skills-list");
 
-  container.innerHTML = skills.map(skill => `<li>${skill}</li>`).join('');
+  container.innerHTML = skills.map(skill => `<div class="skill-tag">${skill}</div>`).join('');
 }
 document.addEventListener("DOMContentLoaded", loadSkills);

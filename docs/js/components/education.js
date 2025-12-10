@@ -4,8 +4,10 @@ async function loadEducation() {
   const container = document.querySelector("#education-list");
 
   container.innerHTML = education.map(edu => `
-    <div class="education-item">
-      <h3>${edu.degree} – ${edu.school} (${edu.years})</h3>
+    <div class="education-card">
+      <h3>${edu.school}</h3>
+      <span class="degree">${edu.degree}</span>
+      <p class="date">${edu.years}</p>
       <p>${edu.description}</p>
     </div>
   `).join('');
