@@ -2,6 +2,7 @@
   {
     "id": "phase-vocoder",
     "title": "Phase Vocoder Speech",
+    "category": "educational",
     "description": "Real-time audio time-stretching without pitch alteration using Phase Vocoder algorithms.",
     "technologies": [
       "Python",
@@ -13,6 +14,7 @@
   {
     "id": "project-1",
     "title": "wilfried-lafaye.fr",
+    "category": "personal",
     "description": "Repository hosting the source code and assets of my personal website, including HTML, CSS, JS, and deployment resources.",
     "technologies": [
       "HTML",
@@ -22,6 +24,34 @@
       "Next.js",
       "GitHub Pages"
     ],
-    "link": "projects/project-1.html"
+    "link": "projects/wilfried-lafaye.html"
+  },
+  {
+    "id": "nyc-accidents",
+    "title": "NYC Accidents SQL Model",
+    "category": "educational",
+    "description": "A data engineering project enabling SQL analysis on NYC traffic accident data through normalization and a Streamlit dashboard.",
+    "technologies": [
+      "Python",
+      "SQL",
+      "Streamlit",
+      "Pandas",
+      "Plotly"
+    ],
+    "link": "projects/nyc-accidents.html"
+  },
+  {
+    "id": "investment-tracker",
+    "title": "Investment Tracker",
+    "category": "personal",
+    "description": "A responsive React application for tracking personal investments with local data persistence and real-time performance visualization.",
+    "technologies": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Recharts",
+      "IndexedDB"
+    ],
+    "link": "projects/investment-tracker.html"
   }
 ]

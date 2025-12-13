@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Wilfried Lafaye</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <header class="navbar glass">
+    <div class="nav-content">
+      <a href="index.html" class="logo">WL.</a>
+      <nav>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#contact" class="btn-primary">Contact Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section" style="min-height: 40vh; padding-top: 8rem;">
+      <div class="hero-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+         <h1>Explore My <span class="text-gradient">Projects</span></h1>
+         <p>A collection of my work, ranging from personal experiments to educational assignments.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <!-- Filters & Search -->
+      <div class="filters-section">
+        <input type="text" id="search-input" class="search-bar" placeholder="Search projects...">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="personal">Personal</button>
+            <button class="filter-btn" data-filter="educational">Educational</button>
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <div id="projects-grid" class="grid-container">
+        <!-- JS will populate this -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Wilfried Lafaye. Built with <span style="color:red">❤</span> and AI.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/projects-page.js"></script>
+</body>
+
+</html>

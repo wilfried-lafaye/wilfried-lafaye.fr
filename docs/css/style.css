@@ -33,6 +33,7 @@ ul {
 /* --- Utilities --- */
 .text-gradient {
   background: linear-gradient(to right, #60a5fa, #c084fc);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -372,4 +373,90 @@ footer {
     display: none;
     /* Mobile menu logic would go here ideally */
   }
+}
+
+/* --- Projects Page --- */
+.filters-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.2);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid var(--glass-border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.project-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.category-badge {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.category-badge.personal {
+  background: rgba(59, 130, 246, 0.2);
+  /* Blue tint */
+  color: #60a5fa;
+}
+
+.category-badge.educational {
+  background: rgba(16, 185, 129, 0.2);
+  /* Green tint */
+  color: #34d399;
+}
+
+.tech-tags {
+  display: flex;
+  gap: 0.5rem;
 }
