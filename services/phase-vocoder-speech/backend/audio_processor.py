@@ -7,6 +7,7 @@ with various effects.
 
 import librosa
 import soundfile as sf
+import numpy as np
 import gc
 import resource
 import time
@@ -69,11 +70,28 @@ class AudioProcessor:
             IOError: If loading fails.
         """
         try:
-            # Load with limit to prevent OOM on Free Tier (512MB RAM)
-            audio_data, sample_rate = librosa.load(file_path, sr=None, mono=True, duration=duration)
+            print(f"Loading audio with SoundFile: {file_path}")
+            # Use SoundFile instead of Librosa for lighter memory footprint
+            audio_data, sample_rate = sf.read(file_path)
+            
+            # Limit duration
+            max_samples = int(duration * sample_rate)
+            if len(audio_data) > max_samples:
+                print(f"Truncating audio from {len(audio_data)} to {max_samples} samples")
+                audio_data = audio_data[:max_samples]
+            
+            # Convert to mono if stereo
+            if audio_data.ndim > 1:
+                print("Converting stereo to mono")
+                audio_data = np.mean(audio_data, axis=1)
+                
+            audio_data = audio_data.astype(np.float32)
+            
             gc.collect() # Force cleanup
+            print(f"Audio loaded successfully. Shape: {audio_data.shape}, SR: {sample_rate}")
             return audio_data, sample_rate
         except Exception as e:
+            print(f"Error loading audio: {e}")
             raise IOError(f'Error loading audio: {str(e)}') from e
 
     def save_audio(self, audio_data, sample_rate, output_path):
