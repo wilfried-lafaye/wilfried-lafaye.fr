@@ -15,6 +15,9 @@ function App() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [processedAudioUrl, setProcessedAudioUrl] = useState(null);
 
+  // Define base URL for audio resources
+  const BASE_URL = import.meta.env.PROD ? '' : 'http://localhost:8000';
+
   // Load available effects on mount
   useEffect(() => {
     getEffects().then(setEffects).catch(console.error);
@@ -37,7 +40,7 @@ function App() {
     try {
       const { file_id, filename } = await uploadAudio(file);
       setFileId(file_id);
-      setAudioUrl(`http://localhost:8000/audio/uploaded/${filename}`);
+      setAudioUrl(`${BASE_URL}/audio/uploaded/${filename}`);
       setProcessedAudioUrl(null); // Reset processed audio
     } catch (error) {
       console.error("Upload failed", error);
@@ -50,7 +53,7 @@ function App() {
     setIsProcessing(true);
     try {
       const { url } = await processAudio(fileId, selectedEffect, params);
-      setProcessedAudioUrl(`http://localhost:8000${url}?t=${Date.now()}`);
+      setProcessedAudioUrl(`${BASE_URL}${url}?t=${Date.now()}`);
       setIsPlaying(false);
     } catch (error) {
       console.error("Processing failed", error);
@@ -165,10 +168,10 @@ function App() {
                     onClick={handleProcess}
                     disabled={!fileId || isProcessing}
                     className={`w-full py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all ${!fileId
-                        ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
-                        : isProcessing
-                          ? 'bg-violet-700 text-white cursor-wait'
-                          : 'bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-lg shadow-violet-900/25 hover:shadow-violet-900/40 hover:scale-[1.02] active:scale-[0.98]'
+                      ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
+                      : isProcessing
+                        ? 'bg-violet-700 text-white cursor-wait'
+                        : 'bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-lg shadow-violet-900/25 hover:shadow-violet-900/40 hover:scale-[1.02] active:scale-[0.98]'
                       }`}
                   >
                     {isProcessing ? 'Processing...' : 'Apply Processing'}
