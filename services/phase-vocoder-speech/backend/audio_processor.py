@@ -116,5 +116,33 @@ import gc
 
         audio_data, sample_rate = self.load_audio(input_path)
         effect = self.effects[effect_name]
-        processed_audio = effect.apply(audio_data, sample_rate, **parameters)
-        return processed_audio, sample_rate
+        
+        # CHUNK PROCESSING TO PREVENT OOM
+        # 512MB RAM is very tight for Librosa STFT on 30s+ audio.
+        # We chunk into 10s segments.
+        CHUNK_DURATION = 10 
+        chunk_size = CHUNK_DURATION * sample_rate
+        total_samples = len(audio_data)
+        
+        processed_chunks = []
+        
+        # Process in chunks
+        for i in range(0, total_samples, chunk_size):
+            chunk = audio_data[i:i + chunk_size]
+            
+            try:
+                processed_chunk = effect.apply(chunk, sample_rate, **parameters)
+                processed_chunks.append(processed_chunk)
+            except Exception as e:
+                print(f"Error processing chunk {i}: {e}")
+                raise e
+            finally:
+                # Force cleanup after every chunk
+                gc.collect()
+        
+        # Concatenate results
+        if not processed_chunks:
+            return np.array([]), sample_rate
+            
+        final_audio = np.concatenate(processed_chunks)
+        return final_audio, sample_rate

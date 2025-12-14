@@ -39,11 +39,19 @@ class EchoEffect(BaseEffect):
 
         try:
             delay_samples = int(delay * sample_rate)
+            
+            # Vectorized implementation
             echo_signal = np.zeros(len(audio_data) + delay_samples)
             echo_signal[:len(audio_data)] = audio_data
-            for i, sample in enumerate(audio_data):
-                if i + delay_samples < len(echo_signal):
-                    echo_signal[i + delay_samples] += decay * sample
+            
+            # Create delayed version and add it
+            delayed_signal = audio_data * decay
+            echo_signal[delay_samples:delay_samples+len(audio_data)] += delayed_signal
+            
+            # Trim to original length if desired, but effect usually extends. 
+            # For consistent chunking, we might want to keep original length or allow expansion.
+            # Keeping expansion logic but ensuring efficient calc.
+            
             # Normalize to prevent clipping
             max_val = np.max(np.abs(echo_signal))
             if max_val > 1.0:
