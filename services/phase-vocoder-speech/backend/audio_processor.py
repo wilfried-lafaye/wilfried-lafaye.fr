@@ -51,12 +51,15 @@ class AudioProcessor:
         """
         self.effects[name] = effect
 
-    def load_audio(self, file_path):
+import gc
+
+    def load_audio(self, file_path, duration=60):
         """
         Loads an audio file.
 
         Args:
             file_path (str): Path to the audio file to load.
+            duration (int): Max duration in seconds to load (default 60s).
 
         Returns:
             tuple: (audio_data (np.ndarray), sample_rate (int))
@@ -65,7 +68,9 @@ class AudioProcessor:
             IOError: If loading fails.
         """
         try:
-            audio_data, sample_rate = librosa.load(file_path, sr=None)
+            # Load with limit to prevent OOM on Free Tier (512MB RAM)
+            audio_data, sample_rate = librosa.load(file_path, sr=None, mono=True, duration=duration)
+            gc.collect() # Force cleanup
             return audio_data, sample_rate
         except Exception as e:
             raise IOError(f'Error loading audio: {str(e)}') from e

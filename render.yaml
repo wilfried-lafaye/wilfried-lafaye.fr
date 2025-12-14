@@ -24,7 +24,7 @@ services:
     plan: free
     rootDir: services/phase-vocoder-speech
     buildCommand: ./render_build.sh
-    startCommand: cd backend && gunicorn main:app --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT
+    startCommand: cd backend && gunicorn main:app --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT --timeout 120
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
