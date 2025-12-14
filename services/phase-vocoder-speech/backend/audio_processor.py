@@ -7,6 +7,7 @@ with various effects.
 
 import librosa
 import soundfile as sf
+import gc
 
 from effects.robot_effect import RobotEffect
 from effects.pitch_effect import PitchEffect
@@ -50,8 +51,6 @@ class AudioProcessor:
             effect: Instance of the effect.
         """
         self.effects[name] = effect
-
-import gc
 
     def load_audio(self, file_path, duration=60):
         """
