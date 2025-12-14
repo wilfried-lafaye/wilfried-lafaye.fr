@@ -8,6 +8,8 @@ with various effects.
 import librosa
 import soundfile as sf
 import gc
+import resource
+import time
 
 from effects.robot_effect import RobotEffect
 from effects.pitch_effect import PitchEffect
@@ -117,16 +119,22 @@ class AudioProcessor:
         effect = self.effects[effect_name]
         
         # CHUNK PROCESSING TO PREVENT OOM
-        # 512MB RAM is very tight for Librosa STFT on 30s+ audio.
-        # We chunk into 10s segments.
-        CHUNK_DURATION = 10 
+        # 512MB RAM is very tight.
+        # We chunk into 5s segments.
+        CHUNK_DURATION = 5 
         chunk_size = CHUNK_DURATION * sample_rate
         total_samples = len(audio_data)
         
         processed_chunks = []
         
+        print(f"Starting processing. Total samples: {total_samples}. Chunk size: {chunk_size}")
+        
         # Process in chunks
         for i in range(0, total_samples, chunk_size):
+            # Log memory
+            mem_usage = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024
+            print(f"Processing chunk {i}/{total_samples}. Mem: {mem_usage:.2f} MB")
+            
             chunk = audio_data[i:i + chunk_size]
             
             try:
@@ -137,6 +145,9 @@ class AudioProcessor:
                 raise e
             finally:
                 # Force cleanup after every chunk
+                del chunk
+                if 'processed_chunk' in locals():
+                    del processed_chunk
                 gc.collect()
         
         # Concatenate results
