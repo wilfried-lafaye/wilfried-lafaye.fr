@@ -58,6 +58,3 @@ services:
     env: docker
     plan: free
     rootDir: services/life-expectancy
-    envVars:
-      - key: PORT
-        value: 8050

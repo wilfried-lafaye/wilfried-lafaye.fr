@@ -9,4 +9,4 @@ COPY . .
 
 EXPOSE 8050
 
-CMD ["gunicorn", "main:server", "--bind", "0.0.0.0:8050", "--timeout", "120"]
+CMD ["sh", "-c", "gunicorn main:server --bind 0.0.0.0:$PORT --timeout 120"]
