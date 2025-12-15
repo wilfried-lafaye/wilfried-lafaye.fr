@@ -34,3 +34,12 @@ services:
     env: static
     rootDir: docs
     staticPublishPath: ./
+
+  - type: web
+    name: nyc-accidents
+    env: docker
+    plan: free
+    rootDir: services/nyc-accidents
+    envVars:
+      - key: PORT
+        value: 8501
