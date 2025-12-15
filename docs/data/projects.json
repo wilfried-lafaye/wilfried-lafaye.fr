@@ -71,5 +71,20 @@
     ],
     "link": "projects/silent-steps.html",
     "version": "v1.0.0"
+  },
+  {
+    "id": "life-expectancy",
+    "title": "Life Expectancy Dashboard",
+    "category": "educational",
+    "description": "An interactive Dash application visualizing global life expectancy data. Features histograms, map visualizations, and country-specific analysis.",
+    "technologies": [
+      "Python",
+      "Dash",
+      "Plotly",
+      "Pandas",
+      "GeoPandas"
+    ],
+    "link": "projects/life-expectancy.html",
+    "version": "v1.0.0"
   }
 ]

@@ -52,3 +52,12 @@ services:
     envVars:
       - key: PORT
         value: 8000
+
+  - type: web
+    name: life-expectancy
+    env: docker
+    plan: free
+    rootDir: services/life-expectancy
+    envVars:
+      - key: PORT
+        value: 8050
