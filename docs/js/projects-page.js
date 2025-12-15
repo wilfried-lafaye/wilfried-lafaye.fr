@@ -82,8 +82,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         </div>
         <h3>${project.title}</h3>
         <p>${project.description}</p>
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-top: auto;">
-            <span style="font-size:0.85rem; color:var(--text-secondary); opacity:0.8;">${dateStr}</span>
+        <div style="display:flex; justify-content:flex-end; align-items:center; margin-top: auto;">
             <a href="${project.link}" class="btn-secondary">View Project &rarr;</a>
         </div>
       `;
