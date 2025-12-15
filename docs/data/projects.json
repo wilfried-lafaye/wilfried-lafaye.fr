@@ -10,7 +10,8 @@
       "Web Audio"
     ],
     "link": "projects/phase-vocoder.html",
-    "version": "v1.0.0"
+    "version": "v1.0.0",
+    "date": "2025-01-15"
   },
   {
     "id": "project-1",
@@ -26,7 +27,8 @@
       "GitHub Pages"
     ],
     "link": "projects/wilfried-lafaye.html",
-    "version": "v2.1.0"
+    "version": "v2.1.0",
+    "date": "2025-02-10"
   },
   {
     "id": "nyc-accidents",
@@ -41,7 +43,8 @@
       "Plotly"
     ],
     "link": "projects/nyc-accidents.html",
-    "version": "v1.0.0"
+    "version": "v1.0.0",
+    "date": "2024-11-20"
   },
   {
     "id": "investment-tracker",
@@ -56,7 +59,8 @@
       "IndexedDB"
     ],
     "link": "projects/investment-tracker.html",
-    "version": "v0.9.0"
+    "version": "v0.9.0",
+    "date": "2024-10-05"
   },
   {
     "id": "silent-steps",
@@ -70,7 +74,8 @@
       "Game Design"
     ],
     "link": "projects/silent-steps.html",
-    "version": "v1.0.0"
+    "version": "v1.0.0",
+    "date": "2023-05-15"
   },
   {
     "id": "life-expectancy",
@@ -85,6 +90,7 @@
       "GeoPandas"
     ],
     "link": "projects/life-expectancy.html",
-    "version": "v1.0.0"
+    "version": "v1.0.0",
+    "date": "2023-01-20"
   }
 ]

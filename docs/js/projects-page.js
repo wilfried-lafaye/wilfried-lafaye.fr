@@ -25,7 +25,41 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
+        // Sort by date descending
+        data.sort((a, b) => {
+            const dateA = a.date ? new Date(a.date) : new Date(0);
+            const dateB = b.date ? new Date(b.date) : new Date(0);
+            return dateB - dateA;
+        });
+
+        let currentYear = null;
+        let currentGrid = null;
+
         data.forEach(project => {
+            // Safe date parsing
+            const projectDate = project.date ? new Date(project.date) : new Date();
+            const projectYear = projectDate.getFullYear();
+
+            // If Year changes, create new heading and grid
+            if (projectYear !== currentYear) {
+                currentYear = projectYear;
+
+                // Year Heading
+                const yearHeading = document.createElement("h2");
+                yearHeading.textContent = currentYear;
+                yearHeading.style.marginTop = "3rem";
+                yearHeading.style.marginBottom = "1.5rem";
+                yearHeading.style.borderBottom = "1px solid rgba(255,255,255,0.1)";
+                yearHeading.style.paddingBottom = "0.5rem";
+                yearHeading.style.color = "var(--text-primary)";
+                listContainer.appendChild(yearHeading);
+
+                // Grid Container for this year
+                currentGrid = document.createElement("div");
+                currentGrid.className = "grid-container";
+                listContainer.appendChild(currentGrid);
+            }
+
             const card = document.createElement("div");
             card.className = "project-card";
 
@@ -38,6 +72,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 ? `<span class="category-badge ${project.category}">${project.category}</span>`
                 : '';
 
+            // Format Month Year
+            const dateStr = projectDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+
             card.innerHTML = `
         <div class="card-header">
            ${categoryLabel}
@@ -45,10 +82,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         </div>
         <h3>${project.title}</h3>
         <p>${project.description}</p>
-        <a href="${project.link}" class="btn-secondary">View Project &rarr;</a>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top: auto;">
+            <span style="font-size:0.85rem; color:var(--text-secondary); opacity:0.8;">${dateStr}</span>
+            <a href="${project.link}" class="btn-secondary">View Project &rarr;</a>
+        </div>
       `;
 
-            listContainer.appendChild(card);
+            currentGrid.appendChild(card);
         });
     }
 
