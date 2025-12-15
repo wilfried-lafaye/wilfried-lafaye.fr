@@ -140,8 +140,22 @@
                     <li><strong>Algorithm:</strong> Phase Vocoder (STFT / ISTFT)</li>
                     <li><strong>Language:</strong> Python (NumPy, SciPy)</li>
                     <li><strong>Interface:</strong> Web-based</li>
+                    <li><strong>Version:</strong> <span id="project-version">Loading...</span></li>
                 </ul>
             </div>
+
+            <script>
+                // Fetch and display version
+                fetch('../data/projects.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const project = data.find(p => p.id === 'phase-vocoder');
+                        if (project && project.version) {
+                            document.getElementById('project-version').textContent = project.version;
+                        }
+                    })
+                    .catch(err => console.error('Error loading project version:', err));
+            </script>
         </section>
     </main>
 

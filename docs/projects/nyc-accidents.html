@@ -143,8 +143,22 @@
                     <li><strong>Source Code:</strong> <a
                             href="https://github.com/wilfried-lafaye/nyc-accidents-sql-model" target="_blank"
                             style="color: var(--primary);">GitHub Repository</a></li>
+                    <li><strong>Version:</strong> <span id="project-version">Loading...</span></li>
                 </ul>
             </div>
+
+            <script>
+                // Fetch and display version
+                fetch('../data/projects.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const project = data.find(p => p.id === 'nyc-accidents');
+                        if (project && project.version) {
+                            document.getElementById('project-version').textContent = project.version;
+                        }
+                    })
+                    .catch(err => console.error('Error loading project version:', err));
+            </script>
         </section>
     </main>
 

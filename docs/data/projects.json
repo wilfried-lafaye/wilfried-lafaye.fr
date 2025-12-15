@@ -9,7 +9,8 @@
       "Signal Processing",
       "Web Audio"
     ],
-    "link": "projects/phase-vocoder.html"
+    "link": "projects/phase-vocoder.html",
+    "version": "v1.0.0"
   },
   {
     "id": "project-1",
@@ -24,7 +25,8 @@
       "Next.js",
       "GitHub Pages"
     ],
-    "link": "projects/wilfried-lafaye.html"
+    "link": "projects/wilfried-lafaye.html",
+    "version": "v2.1.0"
   },
   {
     "id": "nyc-accidents",
@@ -38,7 +40,8 @@
       "Pandas",
       "Plotly"
     ],
-    "link": "projects/nyc-accidents.html"
+    "link": "projects/nyc-accidents.html",
+    "version": "v1.0.0"
   },
   {
     "id": "investment-tracker",
@@ -52,6 +55,7 @@
       "Recharts",
       "IndexedDB"
     ],
-    "link": "projects/investment-tracker.html"
+    "link": "projects/investment-tracker.html",
+    "version": "v0.9.0"
   }
 ]
