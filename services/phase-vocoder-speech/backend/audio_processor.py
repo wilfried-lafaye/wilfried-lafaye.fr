@@ -8,6 +8,7 @@ with various effects.
 import librosa
 import soundfile as sf
 import numpy as np
+import scipy.signal
 import gc
 import resource
 import time
@@ -84,6 +85,16 @@ class AudioProcessor:
             if audio_data.ndim > 1:
                 print("Converting stereo to mono")
                 audio_data = np.mean(audio_data, axis=1)
+
+            # DOWNSAMPLE TO SAVE MEMORY (Crucial for Librosa effects)
+            # Free tier has 512MB RAM. Hi-Res audio (48k) creates massive STFT matrices.
+            # Downsampling to 22050Hz reduces memory by >50%.
+            TARGET_SR = 22050
+            if sample_rate > TARGET_SR:
+                print(f"Downsampling from {sample_rate} to {TARGET_SR} Hz...")
+                new_num_samples = int(len(audio_data) * TARGET_SR / sample_rate)
+                audio_data = scipy.signal.resample(audio_data, new_num_samples)
+                sample_rate = TARGET_SR
                 
             audio_data = audio_data.astype(np.float32)
             
