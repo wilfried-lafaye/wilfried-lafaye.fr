@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silent Steps - Wilfried Lafaye</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .terminal {
+            background-color: #0e0e0e;
+            color: #33ff00;
+            font-family: 'Share Tech Mono', monospace;
+            padding: 1.5rem;
+            height: 100%;
+            overflow-y: auto;
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            line-height: 1.4;
+            display: flex;
+            flex-direction: column;
+            text-shadow: 0 0 5px rgba(51, 255, 0, 0.5);
+        }
+
+        .terminal-log {
+            flex-grow: 1;
+            white-space: pre-wrap;
+            margin-bottom: 1rem;
+        }
+
+        .input-line {
+            display: flex;
+            align-items: center;
+        }
+
+        .prompt {
+            margin-right: 0.5rem;
+            color: #33ff00;
+        }
+
+        .cmd-input {
+            background: transparent;
+            border: none;
+            color: #33ff00;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1rem;
+            flex-grow: 1;
+            outline: none;
+            caret-color: #33ff00;
+        }
+
+        /* Scrollbar */
+        .terminal::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .terminal::-webkit-scrollbar-track {
+            background: #0e0e0e;
+        }
+
+        .terminal::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        .terminal::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar glass">
+        <div class="nav-content">
+            <a href="../index.html" class="logo">WL.</a>
+            <nav>
+                <a href="../index.html#projects">Back to Portfolio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 6rem;">
+        <section class="container">
+            <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
+                <h1 style="margin-bottom: 1rem;">Silent Steps Text Game</h1>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                    A Python text-based adventure game played via a retro web terminal. Escape the facility by solving
+                    puzzles, collecting items, and interacting with characters using text commands.
+                </p>
+
+                <!-- APP CONTAINER -->
+                <div id="app-container" class="app-container"
+                    style="width: 100%; aspect-ratio: 16/10; background: #000; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--glass-border); position: relative; display: flex; align-items: center; justify-content: center;">
+
+                    <!-- SLEEPING STATE UI -->
+                    <div id="sleep-ui" style="text-align: center; padding: 2rem; color: #fff;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-bottom: 1rem; opacity: 0.7;">
+                            <path d="M4 17l6-6-6-6"></path>
+                            <path d="M12 19h8"></path>
+                        </svg>
+                        <h3 style="margin-bottom: 0.5rem;">Initialize Terminal</h3>
+                        <p
+                            style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 400px; margin-left: auto; margin-right: auto;">
+                            Connect to the remote Python server to start the game session.
+                        </p>
+                        <button id="wake-btn" class="btn-primary" onclick="startApp()">
+                            > _START_SESSION
+                        </button>
+                    </div>
+
+                    <!-- LOADING STATE UI -->
+                    <div id="loading-ui" style="display: none; text-align: center; color: #fff;">
+                        <div class="spinner"
+                            style="width: 40px; height: 40px; border: 4px solid rgba(51, 255, 0, 0.2); border-left-color: #33ff00; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;">
+                        </div>
+                        <h3 style="margin-bottom: 0.5rem; font-family: 'Share Tech Mono', monospace; color: #33ff00;">
+                            ESTABLISHING CONNECTION...</h3>
+                        <p style="color: var(--text-secondary);">Please wait while the mainframe boots up.</p>
+                    </div>
+
+                    <!-- TERMINAL UI -->
+                    <div id="terminal-ui" class="terminal" style="display: none; width: 100%; box-sizing: border-box;">
+                        <div id="game-output" class="terminal-log"></div>
+                        <div class="input-line">
+                            <span class="prompt">></span>
+                            <input type="text" id="cmd-input" class="cmd-input" autocomplete="off" spellcheck="false"
+                                autofocus>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1rem; text-align: center;">
+                    <p style="font-size: 0.8rem; color: var(--text-secondary);">
+                        * Commands: go [direction], look, take [item], help, etc. (Powered by Render Free Tier)
+                    </p>
+                </div>
+            </div>
+
+            <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg);">
+                <h2>Technical Details</h2>
+                <ul style="margin-top: 1rem; padding-left: 1.5rem; list-style: disc; color: var(--text-secondary);">
+                    <li><strong>Backend:</strong> Python 3.11, FastAPI (Adapter)</li>
+                    <li><strong>Frontend:</strong> HTML5, JavaScript (Custom Terminal UI)</li>
+                    <li><strong>Deployment:</strong> Docker on Render</li>
+                    <li><strong>Source Code:</strong> <a
+                            href="https://github.com/wilfried-lafaye/silent-steps-text-based-game" target="_blank"
+                            style="color: var(--primary);">GitHub Repository</a></li>
+                    <li><strong>Version:</strong> <span id="project-version">Loading...</span></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // CONFIGURATION
+        const LOCAL_URL = "http://localhost:8000";
+        const PROD_URL = "https://silent-steps.onrender.com"; // Pending deploy
+
+        // SESSION STATE
+        let sessionId = null;
+        let apiUrl = PROD_URL;
+
+        // Determine URL on load
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        apiUrl = isLocal ? LOCAL_URL : PROD_URL;
+
+        async function startApp() {
+            const sleepUi = document.getElementById('sleep-ui');
+            const loadingUi = document.getElementById('loading-ui');
+            const terminalUi = document.getElementById('terminal-ui');
+            const outputDiv = document.getElementById('game-output');
+            const inputField = document.getElementById('cmd-input');
+
+            sleepUi.style.display = 'none';
+            loadingUi.style.display = 'block';
+
+            try {
+                // Call /start endpoint
+                const response = await fetch(`${apiUrl}/start`, { method: 'POST' });
+                if (!response.ok) throw new Error("Failed to connect");
+
+                const data = await response.json();
+                sessionId = data.session_id;
+
+                // Show terminal
+                loadingUi.style.display = 'none';
+                terminalUi.style.display = 'flex';
+
+                // Display welcome message
+                appendToLog(data.output);
+
+                // Focus input
+                inputField.focus();
+
+                // Setup Enter key listener
+                inputField.addEventListener('keydown', async (e) => {
+                    if (e.key === 'Enter') {
+                        const cmd = inputField.value;
+                        inputField.value = '';
+                        appendToLog(`> ${cmd}`);
+                        await sendCommand(cmd);
+                    }
+                });
+
+            } catch (err) {
+                console.error(err);
+                loadingUi.innerHTML = `<h3 style="color:red">CONNECTION FAILED</h3><p>Server might be offline or waking up timed out. Please try again.</p><button class="btn-primary" onclick="location.reload()">Retry</button>`;
+            }
+        }
+
+        async function sendCommand(cmd) {
+            if (!sessionId) return;
+
+            try {
+                const response = await fetch(`${apiUrl}/command`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ session_id: sessionId, command: cmd })
+                });
+
+                const data = await response.json();
+                appendToLog(data.output);
+
+                // Scroll to bottom
+                const terminal = document.getElementById('terminal-ui');
+                terminal.scrollTop = terminal.scrollHeight;
+
+            } catch (err) {
+                appendToLog("\n[ERROR] Connection lost.");
+            }
+        }
+
+        function appendToLog(text) {
+            const outputDiv = document.getElementById('game-output');
+            outputDiv.textContent += text + "\n";
+            // Auto scroll
+            const terminal = document.getElementById('terminal-ui');
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        // Fetch Version
+        fetch('../data/projects.json')
+            .then(response => response.json())
+            .then(data => {
+                const project = data.find(p => p.id === 'silent-steps');
+                if (project && project.version) {
+                    document.getElementById('project-version').textContent = project.version;
+                }
+            })
+            .catch(err => { });
+
+        // Focus management
+        document.getElementById('terminal-ui').addEventListener('click', () => {
+            document.getElementById('cmd-input').focus();
+        });
+
+        // Inline spinner style
+        const styleSheet = document.createElement("style");
+        styleSheet.innerText = `
+            @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        `;
+        document.head.appendChild(styleSheet);
+    </script>
+</body>
+
+</html>

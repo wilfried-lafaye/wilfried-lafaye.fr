@@ -43,3 +43,12 @@ services:
     envVars:
       - key: PORT
         value: 8501
+
+  - type: web
+    name: silent-steps
+    env: docker
+    plan: free
+    rootDir: services/silent-steps
+    envVars:
+      - key: PORT
+        value: 8000

@@ -57,5 +57,19 @@
     ],
     "link": "projects/investment-tracker.html",
     "version": "v0.9.0"
+  },
+  {
+    "id": "silent-steps",
+    "title": "Silent Steps Text Game",
+    "category": "educational",
+    "description": "A Python text-based adventure game played via a retro web terminal interface. Escape the facility by solving puzzles and interacting with characters.",
+    "technologies": [
+      "Python",
+      "FastAPI",
+      "Web Terminal",
+      "Game Design"
+    ],
+    "link": "projects/silent-steps.html",
+    "version": "v1.0.0"
   }
 ]
