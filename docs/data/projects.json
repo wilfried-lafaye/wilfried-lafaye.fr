@@ -10,8 +10,7 @@
       "Web Audio"
     ],
     "link": "projects/phase-vocoder.html",
-    "version": "v1.0.0",
-    "date": "2025-01-15"
+    "date": "2025"
   },
   {
     "id": "project-1",
@@ -27,8 +26,7 @@
       "GitHub Pages"
     ],
     "link": "projects/wilfried-lafaye.html",
-    "version": "v2.1.0",
-    "date": "2025-02-10"
+    "date": "2025"
   },
   {
     "id": "nyc-accidents",
@@ -43,8 +41,7 @@
       "Plotly"
     ],
     "link": "projects/nyc-accidents.html",
-    "version": "v1.0.0",
-    "date": "2024-11-20"
+    "date": "2024"
   },
   {
     "id": "investment-tracker",
@@ -59,8 +56,7 @@
       "IndexedDB"
     ],
     "link": "projects/investment-tracker.html",
-    "version": "v0.9.0",
-    "date": "2024-10-05"
+    "date": "2024"
   },
   {
     "id": "silent-steps",
@@ -74,8 +70,7 @@
       "Game Design"
     ],
     "link": "projects/silent-steps.html",
-    "version": "v1.0.0",
-    "date": "2025-01-06"
+    "date": "2025"
   },
   {
     "id": "life-expectancy",
@@ -90,8 +85,7 @@
       "GeoPandas"
     ],
     "link": "projects/life-expectancy.html",
-    "version": "v1.0.0",
-    "date": "2025-11-12"
+    "date": "2025"
   },
   {
     "id": "dashboard-devops-aws",
@@ -106,8 +100,7 @@
       "Docker"
     ],
     "link": "projects/dashboard-devops-aws.html",
-    "version": "v1.0.0",
-    "date": "2026-01-26"
+    "date": "2026"
   },
   {
     "id": "time-groupe-assistant-rag",
@@ -121,8 +114,7 @@
       "HTML"
     ],
     "link": "projects/time-groupe-assistant-rag.html",
-    "version": "v1.0.0",
-    "date": "2026-02-26"
+    "date": "2026"
   },
   {
     "id": "calendar-mirror",
@@ -136,8 +128,7 @@
       "EventKit"
     ],
     "link": "projects/calendar-mirror.html",
-    "version": "v1.0.0",
-    "date": "2026-02-24"
+    "date": "2026"
   },
   {
     "id": "r-data-mining",
@@ -151,8 +142,7 @@
       "R Markdown"
     ],
     "link": "projects/r-data-mining.html",
-    "version": "v1.0.0",
-    "date": "2026-02-09"
+    "date": "2026"
   },
   {
     "id": "scraping-animals-app",
@@ -166,7 +156,6 @@
       "Data Visualization"
     ],
     "link": "projects/scraping-animals-app.html",
-    "version": "v1.0.0",
-    "date": "2025-12-16"
+    "date": "2025"
   }
 ]
