@@ -75,7 +75,7 @@
     ],
     "link": "projects/silent-steps.html",
     "version": "v1.0.0",
-    "date": "2023-05-15"
+    "date": "2025-01-06"
   },
   {
     "id": "life-expectancy",
@@ -91,6 +91,82 @@
     ],
     "link": "projects/life-expectancy.html",
     "version": "v1.0.0",
-    "date": "2023-01-20"
+    "date": "2025-11-12"
+  },
+  {
+    "id": "dashboard-devops-aws",
+    "title": "Dashboard DevOps AWS",
+    "category": "professional",
+    "description": "Monorepo combining a Flask dashboard for visualizing air quality in France and DevOps documentation built with Quartz, featuring automated deployment to AWS (EKS) and Cloudflare Pages.",
+    "technologies": [
+      "Flask",
+      "AWS EKS",
+      "Cloudflare Pages",
+      "TypeScript",
+      "Docker"
+    ],
+    "link": "projects/dashboard-devops-aws.html",
+    "version": "v1.0.0",
+    "date": "2026-01-26"
+  },
+  {
+    "id": "time-groupe-assistant-rag",
+    "title": "Time Groupe Assistant RAG",
+    "category": "professional",
+    "description": "An AI assistant leveraging Retrieval-Augmented Generation (RAG) to provide context-aware responses.",
+    "technologies": [
+      "Python",
+      "RAG",
+      "AI Assistant",
+      "HTML"
+    ],
+    "link": "projects/time-groupe-assistant-rag.html",
+    "version": "v1.0.0",
+    "date": "2026-02-26"
+  },
+  {
+    "id": "calendar-mirror",
+    "title": "Calendar Mirror",
+    "category": "personal",
+    "description": "An application for mirroring calendar events, built for iOS/macOS using Swift.",
+    "technologies": [
+      "Swift",
+      "iOS",
+      "macOS",
+      "EventKit"
+    ],
+    "link": "projects/calendar-mirror.html",
+    "version": "v1.0.0",
+    "date": "2026-02-24"
+  },
+  {
+    "id": "r-data-mining",
+    "title": "R Data Mining",
+    "category": "educational",
+    "description": "Data mining & NLP projects in R featuring Bayesian classification, LDA/AFD, Word2Vec, TF-IDF, and advanced sentiment analysis with professional R Markdown reporting.",
+    "technologies": [
+      "R",
+      "Data Mining",
+      "NLP",
+      "R Markdown"
+    ],
+    "link": "projects/r-data-mining.html",
+    "version": "v1.0.0",
+    "date": "2026-02-09"
+  },
+  {
+    "id": "scraping-animals-app",
+    "title": "Scraping Animals Pipeline",
+    "category": "educational",
+    "description": "End-to-end data pipeline to scrape, store, and visualize extensive animal data.",
+    "technologies": [
+      "Python",
+      "Web Scraping",
+      "Data Pipeline",
+      "Data Visualization"
+    ],
+    "link": "projects/scraping-animals-app.html",
+    "version": "v1.0.0",
+    "date": "2025-12-16"
   }
 ]
