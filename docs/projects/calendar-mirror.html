@@ -28,17 +28,60 @@
     <main style="padding-top: 6rem;">
         <section class="container">
             <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
-                <h1 style="margin-bottom: 1rem;">Calendar Mirror</h1>
+                <h1 style="margin-bottom: 1rem;">Calendar Mirror (MirrorCal)</h1>
                 <p style="color: var(--text-secondary); margin-bottom: 2rem;">
-                    An application for mirroring calendar events, built for iOS/macOS using Swift.
+                    A native Apple application (macOS menu bar and iOS app) that seamlessly synchronizes and mirrors
+                    events from multiple source calendars into a single unified destination calendar.
                 </p>
 
-                <!-- Project Details / Overview -->
+                <!-- Project Details / Introduction -->
                 <div style="margin-bottom: 2rem;">
-                    <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Overview</h2>
-                    <p style="color: var(--text-secondary);">
-                        An application for mirroring calendar events, built for iOS/macOS using Swift.
+                    <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Introduction</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        MirrorCal is specifically designed to solve the problem of fragmented schedules. It perfectly
+                        combines professional, personal, and family calendars into one unified overview without
+                        accidentally mixing or merging the underlying accounts.
                     </p>
+                </div>
+
+                <!-- Features -->
+                <div style="margin-bottom: 2rem;">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Key Features</h2>
+                    <ul
+                        style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
+                        <li><strong>Multi-Source Synchronization:</strong> Select and consolidate events from multiple
+                            platforms simultaneously (iCloud, Google, Exchange, Outlook, Local calendars).</li>
+                        <li><strong>Unified Destination:</strong> Choose a dedicated local destination calendar where
+                            all copied events will reside cleanly.</li>
+                        <li><strong>Smart Update Detection:</strong> Employs SHA256 hashing algorithms on event
+                            properties to meticulously detect changes. Only modified events trigger an overwrite.</li>
+                        <li><strong>Recurrence & Deletions:</strong> Gracefully supports recurring events and implements
+                            safeties algorithms for sweeping orphaned/deleted events.</li>
+                        <li><strong>100% Local & Private:</strong> Operates entirely on-device using the native Apple
+                            EventKit framework. There are no external servers, no network calls, and absolutely no data
+                            collection.</li>
+                        <li><strong>Cross-Platform:</strong> Available as a lightweight, unobtrusive macOS menu bar
+                            utility and a fully localized iOS application.</li>
+                    </ul>
+                </div>
+
+                <!-- How it works -->
+                <div style="margin-bottom: 2rem;">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">How it Works</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        The user experience is built around a simple, transparent workflow running natively on the
+                        device:
+                    </p>
+                    <ol
+                        style="padding-left: 1.5rem; color: var(--text-secondary); list-style: decimal; margin-bottom: 1rem;">
+                        <li>Grant Calendar access to the application gracefully via EventKit.</li>
+                        <li>Select one or more <strong>Source Calendars</strong> to pull event data from.</li>
+                        <li>Designate a <strong>Destination Calendar</strong> (creating an empty local calendar is
+                            standard practice).</li>
+                        <li>Define a <strong>Synchronization Period</strong> (e.g., from today up to +14 days).</li>
+                        <li>Initiate <strong>Sync Now</strong>. The app duplicates events accurately and automatically
+                            propagates future edits or deletions safely.</li>
+                    </ol>
                 </div>
 
                 <!-- Link to Repo -->
