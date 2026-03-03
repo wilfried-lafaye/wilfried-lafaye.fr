@@ -1,8 +1,26 @@
-[
-  "Python",
-  "SQL",
-  "Deep Learning",
-  "Data Visualization",
-  "Machine Learning",
-  "Data Manipulation"
-]
+{
+  "Languages": [
+    "Python",
+    "SQL",
+    "JavaScript",
+    "HTML/CSS"
+  ],
+  "AI & ML": [
+    "PyTorch",
+    "TensorFlow",
+    "Scikit-learn",
+    "Deep Learning"
+  ],
+  "Data": [
+    "Pandas",
+    "NumPy",
+    "Data Visualization",
+    "Data Manipulation"
+  ],
+  "Tools": [
+    "Git",
+    "Docker",
+    "Astro",
+    "GitHub Actions"
+  ]
+}
