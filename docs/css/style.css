@@ -146,6 +146,56 @@ section {
   font-size: 0.9rem;
 }
 
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-color);
+  transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before {
+  bottom: 8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+.mobile-menu-toggle.active .hamburger {
+  background-color: transparent;
+}
+
+.mobile-menu-toggle.active .hamburger::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active .hamburger::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 /* --- Hero --- */
 .hero-section {
   min-height: 90vh;
@@ -369,9 +419,38 @@ footer {
     height: 300px;
   }
 
+  .mobile-menu-toggle {
+    display: block;
+  }
+
   .navbar nav {
-    display: none;
-    /* Mobile menu logic would go here ideally */
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
+    z-index: 999;
+  }
+
+  .navbar nav.active {
+    right: 0;
+  }
+
+  .navbar nav a,
+  .navbar nav .btn-primary {
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
+  }
+
+  .navbar nav .btn-primary {
+    font-size: 1.2rem;
   }
 }
 
