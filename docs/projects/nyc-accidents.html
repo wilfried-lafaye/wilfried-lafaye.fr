@@ -28,12 +28,79 @@
     <main style="padding-top: 6rem;">
         <section class="container">
             <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
-                <h1 style="margin-bottom: 1rem;">NYC Accidents SQL Model</h1>
+                <h1 style="margin-bottom: 1rem;">NYC Accidents SQL Model & Analysis</h1>
                 <p style="color: var(--text-secondary); margin-bottom: 2rem;">
-                    A data engineering and analysis project focused on transforming raw NYC traffic accident data into a
-                    structured relational database.
-                    It features interactive dashboards and a SQL interface to explore the data.
+                    A data engineering and analysis project focused on understanding database
+                    <strong>normalization</strong>, <strong>SQL creation</strong>, and <strong>data modeling</strong>
+                    using real-world NYC traffic accident data.
                 </p>
+
+                <!-- Project Details / Overview -->
+                <div style="margin-bottom: 2rem;">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Overview</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        This project transforms raw, flat CSV data from NYC Open Data into a structured, relational
+                        SQLite database. It serves as a practical demonstration of moving data from an unoptimized state
+                        into a normalized architecture (targeting 3rd Normal Form).
+                    </p>
+                </div>
+
+                <!-- Learning Objectives -->
+                <div style="margin-bottom: 2rem;">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Learning Objectives</h2>
+                    <ul
+                        style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
+                        <li><strong>Database Normalization:</strong> Structuring flat data efficiently to eliminate
+                            redundancy and ensure data integrity.</li>
+                        <li><strong>SQL Mastery:</strong> Writing complex SQL queries to extract meaningful insights
+                            using joins, aggregations, and advanced filtering.</li>
+                        <li><strong>Application Development:</strong> Bridging a robust SQL backend with a modern
+                            interactive frontend using Python and Streamlit.</li>
+                    </ul>
+                </div>
+
+                <!-- Pipeline & Features -->
+                <div style="margin-bottom: 2rem;">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Features & Architecture</h2>
+                    <ul
+                        style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
+                        <li><strong>Data Pipeline:</strong> Fetches live data via the NYC Open Data API, cleans the raw
+                            inputs, and automatically splits it into relational tables.</li>
+                        <li><strong>Interactive Dashboards:</strong> Visualizes accidents by borough, time of day, and
+                            severity using Plotly Express.</li>
+                        <li><strong>Geospatial Mapping:</strong> Plots specific accident coordinates on interactive
+                            maps.</li>
+                        <li><strong>SQL Playground:</strong> Provides a built-in interface to write and execute custom
+                            SQL queries directly against the new SQLite database.</li>
+                    </ul>
+                </div>
+
+                <!-- Database Schema -->
+                <div style="margin-bottom: 2rem;">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Database Schema</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        The normalization process yields five core relational tables:
+                    </p>
+                    <ul
+                        style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
+                        <li><code>Lieu</code>: Stores unique location properties (Latitude, Longitude, Borough, Street
+                            names).</li>
+                        <li><code>Accident</code>: Captures the core accident events linked functionally to Locations.
+                        </li>
+                        <li><code>VehiculeType</code>: A dedicated lookup table for various vehicle types (e.g., Sedan,
+                            SUV, Bike).</li>
+                        <li><code>VehiculeInAccident</code>: A join table tracking the specific vehicles involved in
+                            respective crashes.</li>
+                        <li><code>FacteurContributif</code>: Catalogs the variables contributing to the accidents, such
+                            as driver distraction.</li>
+                    </ul>
+                </div>
+
+                <!-- Link to Repo -->
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <a href="https://github.com/wilfried-lafaye/nyc-accidents-sql-model" target="_blank"
+                        class="btn-primary">View on GitHub</a>
+                </div>
 
                 <!-- APP CONTAINER or IMAGE -->
                 <!-- APP CONTAINER -->
