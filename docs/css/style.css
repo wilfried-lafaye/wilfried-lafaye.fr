@@ -240,34 +240,39 @@ section {
   gap: 1rem;
 }
 
-/* Hero Visual (right side) */
-.hero-visual {
-  position: relative;
-  flex: 1;
-  min-height: 400px;
-  max-width: 550px;
-}
-
+/* Neural Network Canvas - full hero overlay */
 #neural-canvas {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Hero Visual (glow container) */
+.hero-visual {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Glow Effect */
 .glow-orb {
   position: absolute;
   right: -50px;
-  top: 10%;
-  width: 400px;
-  height: 400px;
+  top: 15%;
+  width: 450px;
+  height: 450px;
   background: radial-gradient(circle, var(--accent-secondary) 0%, rgba(0, 0, 0, 0) 70%);
   opacity: 0.35;
   filter: blur(80px);
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
 }
 
@@ -437,9 +442,11 @@ footer {
   }
 
   .hero-visual {
-    max-width: 100%;
-    min-height: 250px;
-    margin-top: -2rem;
+    display: none;
+  }
+
+  #neural-canvas {
+    opacity: 0.4;
   }
 
   .mobile-menu-toggle {

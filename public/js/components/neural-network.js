@@ -94,7 +94,8 @@
     }
 
     function resize() {
-        const rect = canvas.parentElement.getBoundingClientRect();
+        const hero = document.getElementById('hero') || canvas.parentElement;
+        const rect = hero.getBoundingClientRect();
         const dpr = window.devicePixelRatio || 1;
         width = rect.width;
         height = rect.height;
@@ -186,26 +187,28 @@
         animationId = requestAnimationFrame(animate);
     }
 
-    // --- Event Listeners ---
-    canvas.addEventListener('mousemove', (e) => {
+    // --- Event Listeners (on hero section, since canvas has pointer-events: none) ---
+    const heroEl = document.getElementById('hero') || canvas.parentElement;
+
+    heroEl.addEventListener('mousemove', (e) => {
         const rect = canvas.getBoundingClientRect();
         mouse.x = e.clientX - rect.left;
         mouse.y = e.clientY - rect.top;
     });
 
-    canvas.addEventListener('mouseleave', () => {
+    heroEl.addEventListener('mouseleave', () => {
         mouse.x = null;
         mouse.y = null;
     });
 
     // Touch support for mobile
-    canvas.addEventListener('touchmove', (e) => {
+    heroEl.addEventListener('touchmove', (e) => {
         const rect = canvas.getBoundingClientRect();
         mouse.x = e.touches[0].clientX - rect.left;
         mouse.y = e.touches[0].clientY - rect.top;
     }, { passive: true });
 
-    canvas.addEventListener('touchend', () => {
+    heroEl.addEventListener('touchend', () => {
         mouse.x = null;
         mouse.y = null;
     });
