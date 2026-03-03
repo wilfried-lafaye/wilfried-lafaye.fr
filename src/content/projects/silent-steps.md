@@ -1,0 +1,75 @@
+---
+title: "Silent Steps"
+description: ""
+---
+
+<section class="container">
+<div class="glass" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
+<h1 style="margin-bottom: 1rem;">Silent Steps Text Game</h1>
+<p style="color: var(--text-secondary); margin-bottom: 2rem;">
+A Python text-based adventure game played via a retro web terminal. Escape the facility by solving
+puzzles, collecting items, and interacting with characters using text commands.
+</p>
+
+<!-- APP CONTAINER -->
+<div id="app-container" class="app-container"
+style="width: 100%; aspect-ratio: 16/10; background: #000; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--glass-border); position: relative; display: flex; align-items: center; justify-content: center;">
+
+<!-- SLEEPING STATE UI -->
+<div id="sleep-ui" style="text-align: center; padding: 2rem; color: #fff;">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+style="margin-bottom: 1rem; opacity: 0.7;">
+<path d="M4 17l6-6-6-6"></path>
+<path d="M12 19h8"></path>
+</svg>
+<h3 style="margin-bottom: 0.5rem;">Initialize Terminal</h3>
+<p
+style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 400px; margin-left: auto; margin-right: auto;">
+Connect to the remote Python server to start the game session.
+</p>
+<button id="wake-btn" class="btn-primary" onclick="startApp()">
+> _START_SESSION
+</button>
+</div>
+
+<!-- LOADING STATE UI -->
+<div id="loading-ui" style="display: none; text-align: center; color: #fff;">
+<div class="spinner"
+style="width: 40px; height: 40px; border: 4px solid rgba(51, 255, 0, 0.2); border-left-color: #33ff00; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;">
+</div>
+<h3 style="margin-bottom: 0.5rem; font-family: 'Share Tech Mono', monospace; color: #33ff00;">
+ESTABLISHING CONNECTION...</h3>
+<p style="color: var(--text-secondary);">Please wait while the mainframe boots up.</p>
+</div>
+
+<!-- TERMINAL UI -->
+<div id="terminal-ui" class="terminal" style="display: none; width: 100%; box-sizing: border-box;">
+<div id="game-output" class="terminal-log"></div>
+<div class="input-line">
+<span class="prompt">></span>
+<input type="text" id="cmd-input" class="cmd-input" autocomplete="off" spellcheck="false"
+autofocus>
+</div>
+</div>
+</div>
+
+<div style="margin-top: 1rem; text-align: center;">
+<p style="font-size: 0.8rem; color: var(--text-secondary);">
+* Commands: go [direction], look, take [item], help, etc. (Powered by Render Free Tier)
+</p>
+</div>
+</div>
+
+<div class="glass" style="padding: 2rem; border-radius: var(--radius-lg);">
+<h2>Technical Details</h2>
+<ul style="margin-top: 1rem; padding-left: 1.5rem; list-style: disc; color: var(--text-secondary);">
+<li><strong>Backend:</strong> Python 3.11, FastAPI (Adapter)</li>
+<li><strong>Frontend:</strong> HTML5, JavaScript (Custom Terminal UI)</li>
+<li><strong>Deployment:</strong> Docker on Render</li>
+<li><strong>Source Code:</strong> <a
+href="https://github.com/wilfried-lafaye/silent-steps-text-based-game" target="_blank"
+style="color: var(--primary);">GitHub Repository</a></li>
+</ul>
+</div>
+</section>

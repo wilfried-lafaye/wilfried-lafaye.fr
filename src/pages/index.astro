@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Wilfried Lafaye | AI & Data Science Portfolio" description="Portfolio of Wilfried Lafaye. A Data Scientist & AI Engineer building the next generation of intelligent systems through interactive dashboards, AI models, and web applications.">
+	<section id="hero" class="hero-section">
+      <div class="hero-content">
+        <span class="badge">Portfolio 2025</span>
+        <h1>Crafting Intelligence <br> <span class="text-gradient">with Data & Code</span></h1>
+        <p>Hi, I'm <strong>Wilfried Lafaye</strong>. <br> A Data Scientist & AI Engineer building the next generation of
+          intelligent systems.</p>
+        <div class="hero-actions">
+          <a href="/projects.html" class="btn-primary">View Work</a>
+          <a href="https://github.com/wilfried-lafaye" target="_blank" class="btn-secondary">GitHub</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="glow-orb"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <p>Interactive dashboards, AI models, and web applications.</p>
+      </div>
+      <div id="projects-list" class="grid-container">
+        <!-- Javascript will populate this -->
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="section-header">
+        <h2>Experience</h2>
+      </div>
+      <div id="experience-list" class="timeline-container">
+        <!-- Javascript will populate this -->
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="section-header">
+        <h2>Education</h2>
+      </div>
+      <div id="education-list" class="timeline-container">
+        <!-- Javascript will populate this -->
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="section-header">
+        <h2>Tech Stack</h2>
+      </div>
+      <div id="skills-list" class="skills-cloud">
+        <!-- Javascript will populate this -->
+      </div>
+    </section>
+
+	<script src="/js/components/projects.js" defer is:inline></script>
+    <script src="/js/components/experience.js" defer is:inline></script>
+    <script src="/js/components/education.js" defer is:inline></script>
+    <script src="/js/components/skills.js" defer is:inline></script>
+</Layout>

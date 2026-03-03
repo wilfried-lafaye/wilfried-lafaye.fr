@@ -1,14 +1,20 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Scraping Animals Pipeline</title><meta name="description" content><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="http://localhost:4321/projects/scraping-animals-app.html"><meta property="og:title" content="Scraping Animals Pipeline"><meta property="og:description" content><meta property="og:image" content="http://localhost:4321/img/og-image.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:4321/projects/scraping-animals-app.html"><meta property="twitter:title" content="Scraping Animals Pipeline"><meta property="twitter:description" content><meta property="twitter:image" content="http://localhost:4321/img/og-image.jpg"><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet"><!-- Styles --><link rel="stylesheet" href="/css/style.css"></head> <body> <header class="navbar glass"> <div class="nav-content"> <a href="/index.html" class="logo" aria-label="Home">WL.</a> <button class="mobile-menu-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button> <nav> <a href="/projects.html" aria-label="View Projects">Projects</a> <a href="/index.html#experience" aria-label="View Experience">Experience</a> <a href="/index.html#skills" aria-label="View Skills">Skills</a> <a href="/index.html#contact" class="btn-primary" aria-label="Contact Me">Contact Me</a> </nav> </div> </header> <main>  <section class="container">
+---
+title: "Scraping Animals Pipeline"
+description: ""
+---
+
+<section class="container">
 <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
-<h1 style="margin-bottom: 1rem;">Scraping Animals Pipeline &#x26; Search Engine</h1>
+<h1 style="margin-bottom: 1rem;">Scraping Animals Pipeline & Search Engine</h1>
 <p style="color: var(--text-secondary); margin-bottom: 2rem;">
 A full-stack data engineering project designed to <strong>scrape</strong> animal profiles from A-Z
 Animals, <strong>store</strong> them in MongoDB, <strong>index</strong> them in Elasticsearch, and
 expose them via an interactive <strong>Streamlit Web App</strong>.
 </p>
+
 <!-- Project Details / Overview -->
 <div style="margin-bottom: 2rem;">
-<h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Overview &#x26; Collaboration</h2>
+<h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Overview & Collaboration</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
 This repository represents an end-to-end data pipeline built entirely in
 <em>pair-programming</em> with an AI assistant. It demonstrates expertise in handling extraction
@@ -16,10 +22,12 @@ logic, database management, search index creation, and interactive data visualiz
 a containerized Docker architecture.
 </p>
 </div>
+
 <!-- Core Features -->
 <div style="margin-bottom: 2rem;">
 <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Core Features</h2>
-<ul style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
+<ul
+style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
 <li><strong>Robust Scraper (Scrapy):</strong> Employs generic dynamic extraction for physical
 characteristics and "fun facts". Safely bypasses WAF/403 protections using
 <code>scrapy-impersonate</code>, feeding data directly into a MongoDB pipeline.
@@ -32,13 +40,15 @@ data with filters customized by diet, habitat, and country. Includes real-time s
 and Folium cartography.</li>
 </ul>
 </div>
+
 <!-- System Architecture -->
 <div style="margin-bottom: 2rem;">
 <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">System Architecture</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
 The pipeline guarantees a seamless flow of data across multiple decoupled components:
 </p>
-<ul style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
+<ul
+style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
 <li><strong>Extraction:</strong> Scrapy extracts JSON payloads from A-Z Animals.</li>
 <li><strong>Storage:</strong> Data is persisted in <code>MongoDB</code> via PyMongo pipelines.
 </li>
@@ -49,14 +59,16 @@ index management.</li>
 utilizing a custom SearchClient to interface securely with Elasticsearch and Mongo.</li>
 </ul>
 </div>
+
 <!-- Deployment & Structure -->
 <div style="margin-bottom: 2rem;">
-<h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Deployment &#x26; Structure</h2>
+<h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Deployment & Structure</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
 The entire stack is containerized locally using <strong>Docker Compose</strong> allowing 1-click
 execution. The repository is clearly divided into specific modules:
 </p>
-<ul style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
+<ul
+style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
 <li><code>scrapy/</code>: Contains the Spiders, pipelines, and settings.</li>
 <li><code>webapp/</code>: The Streamlit application source.</li>
 <li><code>scripts/</code>: Utility scripts (e.g., triggering ES indexing).</li>
@@ -65,18 +77,21 @@ execution. The repository is clearly divided into specific modules:
 </li>
 </ul>
 </div>
+
 <!-- Link to Repo -->
 <div style="text-align: center; margin-top: 2rem;">
-<a href="https://github.com/wilfried-lafaye/scraping-animals-app" target="_blank" class="btn-primary">View on GitHub</a>
+<a href="https://github.com/wilfried-lafaye/scraping-animals-app" target="_blank"
+class="btn-primary">View on GitHub</a>
 </div>
 </div>
+
 <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg);">
 <h2>Technical Details</h2>
 <ul style="margin-top: 1rem; padding-left: 1.5rem; list-style: disc; color: var(--text-secondary);">
 <li><strong>Scraping:</strong> Python, Scrapy</li>
-<li><strong>Database &#x26; Search:</strong> MongoDB, Elasticsearch, Kibana</li>
+<li><strong>Database & Search:</strong> MongoDB, Elasticsearch, Kibana</li>
 <li><strong>Frontend:</strong> Streamlit, Folium</li>
 <li><strong>Deployment:</strong> Docker Compose</li>
 </ul>
 </div>
-</section>  </main> <footer> <p>&copy; 2025 Wilfried Lafaye. Built with <span style="color:red">❤</span> and Astro.</p> </footer> <!-- Inject the mobile navigation script globally --> <script src="/js/components/mobile-nav.js" defer></script> </body> </html>
+</section>

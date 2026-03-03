@@ -1,27 +1,39 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Calendar Mirror</title><meta name="description" content><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="http://localhost:4321/projects/calendar-mirror.html"><meta property="og:title" content="Calendar Mirror"><meta property="og:description" content><meta property="og:image" content="http://localhost:4321/img/og-image.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:4321/projects/calendar-mirror.html"><meta property="twitter:title" content="Calendar Mirror"><meta property="twitter:description" content><meta property="twitter:image" content="http://localhost:4321/img/og-image.jpg"><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet"><!-- Styles --><link rel="stylesheet" href="/css/style.css"></head> <body> <header class="navbar glass"> <div class="nav-content"> <a href="/index.html" class="logo" aria-label="Home">WL.</a> <button class="mobile-menu-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button> <nav> <a href="/projects.html" aria-label="View Projects">Projects</a> <a href="/index.html#experience" aria-label="View Experience">Experience</a> <a href="/index.html#skills" aria-label="View Skills">Skills</a> <a href="/index.html#contact" class="btn-primary" aria-label="Contact Me">Contact Me</a> </nav> </div> </header> <main>  <section class="container">
+---
+title: "Calendar Mirror"
+description: ""
+---
+
+<section class="container">
 <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
 <h1 style="margin-bottom: 1rem;">Calendar Mirror (MirrorCal)</h1>
 <p style="color: var(--text-secondary); margin-bottom: 2rem;">
 A native Apple application (macOS menu bar and iOS app) that seamlessly synchronizes and mirrors
 events from multiple source calendars into a single unified destination calendar.
 </p>
+
 <!-- Project Images -->
-<div style="display: flex; flex-direction: row; gap: 1.5rem; align-items: flex-start; justify-content: center; margin-bottom: 2rem;">
+<div
+style="display: flex; flex-direction: row; gap: 1.5rem; align-items: flex-start; justify-content: center; margin-bottom: 2rem;">
 <!-- macOS App Mockup -->
 <div style="flex: 2; text-align: center;">
-<div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 4px 6px rgba(0,0,0,0.3); margin-bottom: 0.5rem;">
-<img src="../img/calendar-mirror.png" alt="MirrorCal macOS App Mockup" style="width: 100%; height: auto; display: block;">
+<div
+style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 4px 6px rgba(0,0,0,0.3); margin-bottom: 0.5rem;">
+<img src="../img/calendar-mirror.png" alt="MirrorCal macOS App Mockup"
+style="width: 100%; height: auto; display: block;">
 </div>
 <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Application macOS</p>
 </div>
 <!-- iOS App Mockup -->
 <div style="flex: 1; max-width: 300px; text-align: center;">
-<div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 4px 6px rgba(0,0,0,0.3); margin-bottom: 0.5rem;">
-<img src="../img/calendar-mirror-ios.png" alt="MirrorCal iOS App Mockup" style="width: 100%; height: auto; display: block;">
+<div
+style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 4px 6px rgba(0,0,0,0.3); margin-bottom: 0.5rem;">
+<img src="../img/calendar-mirror-ios.png" alt="MirrorCal iOS App Mockup"
+style="width: 100%; height: auto; display: block;">
 </div>
 <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Application iOS</p>
 </div>
 </div>
+
 <!-- Project Details / Introduction -->
 <div style="margin-bottom: 2rem;">
 <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Introduction</h2>
@@ -31,25 +43,28 @@ combines professional, personal, and family calendars into one unified overview 
 accidentally mixing or merging the underlying accounts.
 </p>
 </div>
+
 <!-- Features -->
 <div style="margin-bottom: 2rem;">
 <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Key Features</h2>
-<ul style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
+<ul
+style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
 <li><strong>Multi-Source Synchronization:</strong> Select and consolidate events from multiple
 platforms simultaneously (iCloud, Google, Exchange, Outlook, Local calendars).</li>
 <li><strong>Unified Destination:</strong> Choose a dedicated local destination calendar where
 all copied events will reside cleanly.</li>
 <li><strong>Smart Update Detection:</strong> Employs SHA256 hashing algorithms on event
 properties to meticulously detect changes. Only modified events trigger an overwrite.</li>
-<li><strong>Recurrence &#x26; Deletions:</strong> Gracefully supports recurring events and implements
+<li><strong>Recurrence & Deletions:</strong> Gracefully supports recurring events and implements
 safeties algorithms for sweeping orphaned/deleted events.</li>
-<li><strong>100% Local &#x26; Private:</strong> Operates entirely on-device using the native Apple
+<li><strong>100% Local & Private:</strong> Operates entirely on-device using the native Apple
 EventKit framework. There are no external servers, no network calls, and absolutely no data
 collection.</li>
 <li><strong>Cross-Platform:</strong> Available as a lightweight, unobtrusive macOS menu bar
 utility and a fully localized iOS application.</li>
 </ul>
 </div>
+
 <!-- How it works -->
 <div style="margin-bottom: 2rem;">
 <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">How it Works</h2>
@@ -57,7 +72,8 @@ utility and a fully localized iOS application.</li>
 The user experience is built around a simple, transparent workflow running natively on the
 device:
 </p>
-<ol style="padding-left: 1.5rem; color: var(--text-secondary); list-style: decimal; margin-bottom: 1rem;">
+<ol
+style="padding-left: 1.5rem; color: var(--text-secondary); list-style: decimal; margin-bottom: 1rem;">
 <li>Grant Calendar access to the application gracefully via EventKit.</li>
 <li>Select one or more <strong>Source Calendars</strong> to pull event data from.</li>
 <li>Designate a <strong>Destination Calendar</strong> (creating an empty local calendar is
@@ -67,15 +83,18 @@ standard practice).</li>
 propagates future edits or deletions safely.</li>
 </ol>
 </div>
+
 <!-- Link to Repo -->
 <div style="text-align: center; margin-top: 2rem;">
-<a href="https://github.com/wilfried-lafaye/calendar-mirror" target="_blank" class="btn-primary">View on GitHub</a>
+<a href="https://github.com/wilfried-lafaye/calendar-mirror" target="_blank"
+class="btn-primary">View on GitHub</a>
 </div>
 </div>
+
 <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg);">
 <h2>Technical Details</h2>
 <ul style="margin-top: 1rem; padding-left: 1.5rem; list-style: disc; color: var(--text-secondary);">
 <li><strong>Technologies:</strong> Swift, iOS, macOS, EventKit</li>
 </ul>
 </div>
-</section>  </main> <footer> <p>&copy; 2025 Wilfried Lafaye. Built with <span style="color:red">❤</span> and Astro.</p> </footer> <!-- Inject the mobile navigation script globally --> <script src="/js/components/mobile-nav.js" defer></script> </body> </html>
+</section>

@@ -1,25 +1,34 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Time Groupe Assistant RAG</title><meta name="description" content><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="http://localhost:4321/projects/time-groupe-assistant-rag.html"><meta property="og:title" content="Time Groupe Assistant RAG"><meta property="og:description" content><meta property="og:image" content="http://localhost:4321/img/og-image.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:4321/projects/time-groupe-assistant-rag.html"><meta property="twitter:title" content="Time Groupe Assistant RAG"><meta property="twitter:description" content><meta property="twitter:image" content="http://localhost:4321/img/og-image.jpg"><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet"><!-- Styles --><link rel="stylesheet" href="/css/style.css"></head> <body> <header class="navbar glass"> <div class="nav-content"> <a href="/index.html" class="logo" aria-label="Home">WL.</a> <button class="mobile-menu-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button> <nav> <a href="/projects.html" aria-label="View Projects">Projects</a> <a href="/index.html#experience" aria-label="View Experience">Experience</a> <a href="/index.html#skills" aria-label="View Skills">Skills</a> <a href="/index.html#contact" class="btn-primary" aria-label="Contact Me">Contact Me</a> </nav> </div> </header> <main>  <section class="container">
+---
+title: "Time Groupe Assistant RAG"
+description: ""
+---
+
+<section class="container">
 <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
 <h1 style="margin-bottom: 1rem;">Time Groupe Assistant RAG</h1>
 <p style="color: var(--text-secondary); margin-bottom: 2rem;">
 A virtual AI assistant exploration project leveraging <strong>Retrieval-Augmented Generation
 (RAG)</strong> technology to provide context-aware responses based on a custom knowledge base.
 </p>
+
 <!-- Project Details / Overview -->
 <div style="margin-bottom: 2rem;">
-<h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Overview &#x26; Discovery</h2>
+<h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Overview & Discovery</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
 This repository serves as a practical discovery and implementation of modern
 <strong>RAG</strong> architectures. It was built specifically to act as a virtual assistant for
-<a href="https://timegroupe.ca" target="_blank" style="color: var(--primary); text-decoration: underline;">Time Groupe</a>, an event
+<a href="https://timegroupe.ca" target="_blank"
+style="color: var(--primary); text-decoration: underline;">Time Groupe</a>, an event
 management company based in Montreal. By vectorizing their operational data, the assistant
 answers highly specific questions accurately without hallucinating.
 </p>
 </div>
+
 <!-- Core Technologies -->
 <div style="margin-bottom: 2rem;">
 <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Core Technologies</h2>
-<ul style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
+<ul
+style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
 <li><strong>Backend API:</strong> Built with <code>FastAPI</code> and served via
 <code>Uvicorn</code> for high-performance, asynchronous request handling.
 </li>
@@ -31,23 +40,26 @@ caching the semantic embeddings of the knowledge base.</li>
 generative aspect of the responses based on retrieved context.</li>
 </ul>
 </div>
+
 <!-- Architecture -->
 <div style="margin-bottom: 2rem;">
 <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">System Architecture</h2>
-<ul style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
+<ul
+style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
 <li><strong>Knowledge Base:</strong> A raw text data file (<code>time_groupe_info.txt</code>)
 acts as the company's single source of truth.</li>
 <li><strong>RAG Engine:</strong> The <code>rag_engine.py</code> module is responsible for
 loading the text, chunking it into processable segments, storing it semantically in
 ChromaDB, and executing the similarity search retrieval.</li>
-<li><strong>API &#x26; Interface:</strong> The <code>main.py</code> exposes the orchestration via
+<li><strong>API & Interface:</strong> The <code>main.py</code> exposes the orchestration via
 REST endpoints, while a lightweight <code>static/index.html</code> serves as the user-facing
 chat frontend.</li>
 </ul>
 </div>
+
 <!-- Usage Context -->
 <div style="margin-bottom: 2rem;">
-<h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">API &#x26; Usage Context</h2>
+<h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">API & Usage Context</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
 Once the local server is running, the core interaction happens via the default POST endpoint
 (<code>/ask</code>). Users can submit natural language questions such as <em>"Quels types
@@ -55,16 +67,19 @@ d'événements organisez-vous ?"</em> (What types of events do you organize?) an
 retrieves the top contexts from ChromaDB to synthesize an accurate response.
 </p>
 </div>
+
 <!-- Link to Repo -->
 <div style="text-align: center; margin-top: 2rem;">
-<a href="https://github.com/wilfried-lafaye/time-groupe-assistant-rag" target="_blank" class="btn-primary">View on GitHub</a>
+<a href="https://github.com/wilfried-lafaye/time-groupe-assistant-rag" target="_blank"
+class="btn-primary">View on GitHub</a>
 </div>
 </div>
+
 <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg);">
 <h2>Technical Details</h2>
 <ul style="margin-top: 1rem; padding-left: 1.5rem; list-style: disc; color: var(--text-secondary);">
 <li><strong>Backend:</strong> Python, FastAPI, Uvicorn</li>
-<li><strong>AI &#x26; DB:</strong> LangChain, ChromaDB, OpenAI</li>
+<li><strong>AI & DB:</strong> LangChain, ChromaDB, OpenAI</li>
 </ul>
 </div>
-</section>  </main> <footer> <p>&copy; 2025 Wilfried Lafaye. Built with <span style="color:red">❤</span> and Astro.</p> </footer> <!-- Inject the mobile navigation script globally --> <script src="/js/components/mobile-nav.js" defer></script> </body> </html>
+</section>

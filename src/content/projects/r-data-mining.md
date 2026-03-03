@@ -1,10 +1,16 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>R Data Mining</title><meta name="description" content><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="http://localhost:4321/projects/r-data-mining.html"><meta property="og:title" content="R Data Mining"><meta property="og:description" content><meta property="og:image" content="http://localhost:4321/img/og-image.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:4321/projects/r-data-mining.html"><meta property="twitter:title" content="R Data Mining"><meta property="twitter:description" content><meta property="twitter:image" content="http://localhost:4321/img/og-image.jpg"><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet"><!-- Styles --><link rel="stylesheet" href="/css/style.css"></head> <body> <header class="navbar glass"> <div class="nav-content"> <a href="/index.html" class="logo" aria-label="Home">WL.</a> <button class="mobile-menu-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button> <nav> <a href="/projects.html" aria-label="View Projects">Projects</a> <a href="/index.html#experience" aria-label="View Experience">Experience</a> <a href="/index.html#skills" aria-label="View Skills">Skills</a> <a href="/index.html#contact" class="btn-primary" aria-label="Contact Me">Contact Me</a> </nav> </div> </header> <main>  <section class="container">
+---
+title: "R Data Mining"
+description: ""
+---
+
+<section class="container">
 <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
 <h1 style="margin-bottom: 1rem;">R Data Mining</h1>
 <p style="color: var(--text-secondary); margin-bottom: 2rem;">
-Data mining &#x26; NLP projects in R featuring Bayesian classification, LDA/AFD, Word2Vec, TF-IDF, and
+Data mining & NLP projects in R featuring Bayesian classification, LDA/AFD, Word2Vec, TF-IDF, and
 advanced sentiment analysis with professional R Markdown reporting.
 </p>
+
 <!-- Project Details / Overview -->
 <div style="margin-bottom: 2rem;">
 <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Overview</h2>
@@ -14,36 +20,42 @@ focused on <strong>Bayesian classification</strong>, <strong>Discriminant Factor
 (AFD/LDA)</strong>, and <strong>Natural Language Processing (NLP)</strong> using R.
 </p>
 </div>
+
 <!-- Learning Objectives -->
 <div style="margin-bottom: 2rem;">
 <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Learning Objectives</h2>
-<ul style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
+<ul
+style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
 <li><strong>Statistical Modeling:</strong> Implementing and comparing Bayesian classifiers and
 Discriminant Factor Analysis.</li>
 <li><strong>Natural Language Processing:</strong> Transforming raw text into actionable data
 using Word Embeddings (Word2Vec) and TF-IDF.</li>
-<li><strong>Data Quality &#x26; Engineering:</strong> Handling complex datasets, mitigating data
+<li><strong>Data Quality & Engineering:</strong> Handling complex datasets, mitigating data
 leakage, and addressing paraphrased observations and noise.</li>
-<li><strong>Reporting &#x26; Visualization:</strong> Building professional, interactive HTML reports
+<li><strong>Reporting & Visualization:</strong> Building professional, interactive HTML reports
 using R Markdown, custom CSS, and <code>ggplot2</code>.</li>
 </ul>
 </div>
+
 <!-- Features & Pipeline -->
 <div style="margin-bottom: 2rem;">
 <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Pipeline Features</h2>
-<ul style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
+<ul
+style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
 <li><strong>Advanced NLP Pipeline:</strong> Robust text preprocessing (tokenization, cleaning
 URLs/mentions/hashtags, bigram detection) and feature engineering (transitioning from sparse
 TF-IDF vectors to dense Word2Vec representations).</li>
-<li><strong>Machine Learning &#x26; Analysis:</strong> Multi-class sentiment analysis of Twitter
+<li><strong>Machine Learning & Analysis:</strong> Multi-class sentiment analysis of Twitter
 data, hierarchical classification routing through multiple model levels, and comparative
 studies analyzing the impact of different vectorization techniques.</li>
 </ul>
 </div>
+
 <!-- Projects Overview -->
 <div style="margin-bottom: 2rem;">
 <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Included Sub-Projects</h2>
-<ul style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
+<ul
+style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
 <li><strong>Projet 1 (Bayesian Classification):</strong> Detecting emotions in short texts using
 Bayesian principles.</li>
 <li><strong>Projet 2 (Twitter Sentiment Analysis):</strong> Advanced study using Word2Vec and
@@ -54,18 +66,21 @@ comparing Sparse (TF-IDF) and Word Embeddings approaches.</li>
 AI-generated text for a Kaggle challenge.</li>
 </ul>
 </div>
+
 <!-- Link to Repo -->
 <div style="text-align: center; margin-top: 2rem;">
 <a href="https://github.com/wilfried-lafaye/r-data-mining" target="_blank" class="btn-primary">View
 on GitHub</a>
-<a href="https://wilfried-lafaye.github.io/r-data-mining/" target="_blank" class="btn-secondary" style="margin-left: 1rem;">View
+<a href="https://wilfried-lafaye.github.io/r-data-mining/" target="_blank" class="btn-secondary"
+style="margin-left: 1rem;">View
 Interactive Reports</a>
 </div>
 </div>
+
 <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg);">
 <h2>Technical Details</h2>
 <ul style="margin-top: 1rem; padding-left: 1.5rem; list-style: disc; color: var(--text-secondary);">
 <li><strong>Technologies:</strong> R, Data Mining, NLP, R Markdown</li>
 </ul>
 </div>
-</section>  </main> <footer> <p>&copy; 2025 Wilfried Lafaye. Built with <span style="color:red">❤</span> and Astro.</p> </footer> <!-- Inject the mobile navigation script globally --> <script src="/js/components/mobile-nav.js" defer></script> </body> </html>
+</section>

@@ -1,4 +1,9 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Life Expectancy Dashboard</title><meta name="description" content><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="http://localhost:4321/projects/life-expectancy.html"><meta property="og:title" content="Life Expectancy Dashboard"><meta property="og:description" content><meta property="og:image" content="http://localhost:4321/img/og-image.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:4321/projects/life-expectancy.html"><meta property="twitter:title" content="Life Expectancy Dashboard"><meta property="twitter:description" content><meta property="twitter:image" content="http://localhost:4321/img/og-image.jpg"><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet"><!-- Styles --><link rel="stylesheet" href="/css/style.css"></head> <body> <header class="navbar glass"> <div class="nav-content"> <a href="/index.html" class="logo" aria-label="Home">WL.</a> <button class="mobile-menu-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button> <nav> <a href="/projects.html" aria-label="View Projects">Projects</a> <a href="/index.html#experience" aria-label="View Experience">Experience</a> <a href="/index.html#skills" aria-label="View Skills">Skills</a> <a href="/index.html#contact" class="btn-primary" aria-label="Contact Me">Contact Me</a> </nav> </div> </header> <main>  <section class="container">
+---
+title: "Life Expectancy Dashboard"
+description: ""
+---
+
+<section class="container">
 <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
 <h1 style="margin-bottom: 1rem;">Life Expectancy Dashboard</h1>
 <p style="color: var(--text-secondary); margin-bottom: 2rem;">
@@ -6,37 +11,48 @@ An interactive data dashboard visualizing global life expectancy trends.
 Built with Python Dash and Plotly, it features dynamic maps, histograms, and detailed country
 analysis.
 </p>
+
 <!-- APP CONTAINER -->
-<div id="app-container" class="app-container" style="width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--glass-border); position: relative; display: flex; align-items: center; justify-content: center;">
+<div id="app-container" class="app-container"
+style="width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--glass-border); position: relative; display: flex; align-items: center; justify-content: center;">
+
 <!-- SLEEPING STATE UI -->
 <div id="sleep-ui" style="text-align: center; padding: 2rem; color: #fff;">
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem; opacity: 0.7;">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+style="margin-bottom: 1rem; opacity: 0.7;">
 <path d="M3 3v18h18"></path>
 <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path>
 </svg>
 <h3 style="margin-bottom: 0.5rem;">Application is Sleeping</h3>
-<p style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 400px; margin-left: auto; margin-right: auto;">
+<p
+style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 400px; margin-left: auto; margin-right: auto;">
 To save resources, this server sleeps when idle. Waking it up may take about 1-2 minutes.
 </p>
 <button id="wake-btn" class="btn-primary" onclick="startApp()">
 Start Dashboard
 </button>
 </div>
+
 <!-- LOADING STATE UI (Hidden by default) -->
 <div id="loading-ui" style="display: none; text-align: center; color: #fff;">
-<div class="spinner" style="width: 40px; height: 40px; border: 4px solid rgba(255,255,255,0.1); border-left-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;">
+<div class="spinner"
+style="width: 40px; height: 40px; border: 4px solid rgba(255,255,255,0.1); border-left-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;">
 </div>
 <h3 style="margin-bottom: 0.5rem;">Waking up server...</h3>
 <p style="color: var(--text-secondary);">Loading data and maps. This might take a moment.</p>
 </div>
+
 <!-- IFRAME (Injected via JS) -->
 </div>
+
 <div style="margin-top: 1rem; text-align: center;">
 <p style="font-size: 0.8rem; color: var(--text-secondary);">
 * Powered by Render Free Tier (On-Demand)
 </p>
 </div>
 </div>
+
 <script>
 // CONFIGURATION
 const LOCAL_URL = "http://localhost:8050";
@@ -91,6 +107,7 @@ styleSheet.innerText = `
 `;
 document.head.appendChild(styleSheet);
 </script>
+</div>
 
 <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg);">
 <h2>Technical Details</h2>
@@ -98,7 +115,9 @@ document.head.appendChild(styleSheet);
 <li><strong>Framework:</strong> Dash (Python)</li>
 <li><strong>Viz:</strong> Plotly, Folium</li>
 <li><strong>Data:</strong> Pandas, GeoPandas</li>
-<li><strong>Source Code:</strong> <a href="https://github.com/wilfried-lafaye/life-expectancy-dashboard" target="_blank" style="color: var(--primary);">GitHub Repository</a></li>
+<li><strong>Source Code:</strong> <a
+href="https://github.com/wilfried-lafaye/life-expectancy-dashboard" target="_blank"
+style="color: var(--primary);">GitHub Repository</a></li>
 </ul>
 </div>
-</section>  </main> <footer> <p>&copy; 2025 Wilfried Lafaye. Built with <span style="color:red">❤</span> and Astro.</p> </footer> <!-- Inject the mobile navigation script globally --> <script src="/js/components/mobile-nav.js" defer></script> </body> </html>
+</section>

@@ -1,11 +1,17 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NYC Accidents SQL Model</title><meta name="description" content><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="http://localhost:4321/projects/nyc-accidents.html"><meta property="og:title" content="NYC Accidents SQL Model"><meta property="og:description" content><meta property="og:image" content="http://localhost:4321/img/og-image.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:4321/projects/nyc-accidents.html"><meta property="twitter:title" content="NYC Accidents SQL Model"><meta property="twitter:description" content><meta property="twitter:image" content="http://localhost:4321/img/og-image.jpg"><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet"><!-- Styles --><link rel="stylesheet" href="/css/style.css"></head> <body> <header class="navbar glass"> <div class="nav-content"> <a href="/index.html" class="logo" aria-label="Home">WL.</a> <button class="mobile-menu-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button> <nav> <a href="/projects.html" aria-label="View Projects">Projects</a> <a href="/index.html#experience" aria-label="View Experience">Experience</a> <a href="/index.html#skills" aria-label="View Skills">Skills</a> <a href="/index.html#contact" class="btn-primary" aria-label="Contact Me">Contact Me</a> </nav> </div> </header> <main>  <section class="container">
+---
+title: "NYC Accidents SQL Model"
+description: ""
+---
+
+<section class="container">
 <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
-<h1 style="margin-bottom: 1rem;">NYC Accidents SQL Model &#x26; Analysis</h1>
+<h1 style="margin-bottom: 1rem;">NYC Accidents SQL Model & Analysis</h1>
 <p style="color: var(--text-secondary); margin-bottom: 2rem;">
 A data engineering and analysis project focused on understanding database
 <strong>normalization</strong>, <strong>SQL creation</strong>, and <strong>data modeling</strong>
 using real-world NYC traffic accident data.
 </p>
+
 <!-- Project Details / Overview -->
 <div style="margin-bottom: 2rem;">
 <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Overview</h2>
@@ -15,10 +21,12 @@ SQLite database. It serves as a practical demonstration of moving data from an u
 into a normalized architecture (targeting 3rd Normal Form).
 </p>
 </div>
+
 <!-- Learning Objectives -->
 <div style="margin-bottom: 2rem;">
 <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Learning Objectives</h2>
-<ul style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
+<ul
+style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
 <li><strong>Database Normalization:</strong> Structuring flat data efficiently to eliminate
 redundancy and ensure data integrity.</li>
 <li><strong>SQL Mastery:</strong> Writing complex SQL queries to extract meaningful insights
@@ -27,10 +35,12 @@ using joins, aggregations, and advanced filtering.</li>
 interactive frontend using Python and Streamlit.</li>
 </ul>
 </div>
+
 <!-- Pipeline & Features -->
 <div style="margin-bottom: 2rem;">
-<h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Features &#x26; Architecture</h2>
-<ul style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
+<h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Features & Architecture</h2>
+<ul
+style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
 <li><strong>Data Pipeline:</strong> Fetches live data via the NYC Open Data API, cleans the raw
 inputs, and automatically splits it into relational tables.</li>
 <li><strong>Interactive Dashboards:</strong> Visualizes accidents by borough, time of day, and
@@ -41,13 +51,15 @@ maps.</li>
 SQL queries directly against the new SQLite database.</li>
 </ul>
 </div>
+
 <!-- Database Schema -->
 <div style="margin-bottom: 2rem;">
 <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Database Schema</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
 The normalization process yields five core relational tables:
 </p>
-<ul style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
+<ul
+style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
 <li><code>Lieu</code>: Stores unique location properties (Latitude, Longitude, Borough, Street
 names).</li>
 <li><code>Accident</code>: Captures the core accident events linked functionally to Locations.
@@ -60,42 +72,55 @@ respective crashes.</li>
 as driver distraction.</li>
 </ul>
 </div>
+
 <!-- Link to Repo -->
 <div style="text-align: center; margin-bottom: 3rem;">
-<a href="https://github.com/wilfried-lafaye/nyc-accidents-sql-model" target="_blank" class="btn-primary">View on GitHub</a>
+<a href="https://github.com/wilfried-lafaye/nyc-accidents-sql-model" target="_blank"
+class="btn-primary">View on GitHub</a>
 </div>
+
 <!-- APP CONTAINER or IMAGE -->
 <!-- APP CONTAINER -->
-<div id="app-container" class="app-container" style="width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--glass-border); position: relative; display: flex; align-items: center; justify-content: center;">
+<div id="app-container" class="app-container"
+style="width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--glass-border); position: relative; display: flex; align-items: center; justify-content: center;">
+
 <!-- SLEEPING STATE UI -->
 <div id="sleep-ui" style="text-align: center; padding: 2rem; color: #fff;">
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem; opacity: 0.7;">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+style="margin-bottom: 1rem; opacity: 0.7;">
 <path d="M12 2a10 10 0 1 0 10 10 10 10 0 0 0-10-10z"></path>
 <path d="M12 6v6l4 2"></path>
 </svg>
 <h3 style="margin-bottom: 0.5rem;">Application is Sleeping</h3>
-<p style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 400px; margin-left: auto; margin-right: auto;">
+<p
+style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 400px; margin-left: auto; margin-right: auto;">
 To save resources, this server sleeps when idle. Waking it up may take about 1-2 minutes.
 </p>
 <button id="wake-btn" class="btn-primary" onclick="startApp()">
 Start Application
 </button>
 </div>
+
 <!-- LOADING STATE UI (Hidden by default) -->
 <div id="loading-ui" style="display: none; text-align: center; color: #fff;">
-<div class="spinner" style="width: 40px; height: 40px; border: 4px solid rgba(255,255,255,0.1); border-left-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;">
+<div class="spinner"
+style="width: 40px; height: 40px; border: 4px solid rgba(255,255,255,0.1); border-left-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;">
 </div>
 <h3 style="margin-bottom: 0.5rem;">Waking up server...</h3>
 <p style="color: var(--text-secondary);">Please wait, this might take a moment.</p>
 </div>
+
 <!-- IFRAME (Injected via JS) -->
 </div>
+
 <div style="margin-top: 1rem; text-align: center;">
 <p style="font-size: 0.8rem; color: var(--text-secondary);">
 * Powered by Render Free Tier (On-Demand)
 </p>
 </div>
 </div>
+
 <script>
 // CONFIGURATION
 const LOCAL_URL = "http://localhost:8501";
@@ -150,6 +175,7 @@ styleSheet.innerText = `
 `;
 document.head.appendChild(styleSheet);
 </script>
+</div>
 
 <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg);">
 <h2>Technical Details</h2>
@@ -158,7 +184,9 @@ document.head.appendChild(styleSheet);
 <li><strong>Backend:</strong> Python 3.10+</li>
 <li><strong>Frontend:</strong> Streamlit</li>
 <li><strong>Visualization:</strong> Plotly Express</li>
-<li><strong>Source Code:</strong> <a href="https://github.com/wilfried-lafaye/nyc-accidents-sql-model" target="_blank" style="color: var(--primary);">GitHub Repository</a></li>
+<li><strong>Source Code:</strong> <a
+href="https://github.com/wilfried-lafaye/nyc-accidents-sql-model" target="_blank"
+style="color: var(--primary);">GitHub Repository</a></li>
 </ul>
 </div>
-</section>  </main> <footer> <p>&copy; 2025 Wilfried Lafaye. Built with <span style="color:red">❤</span> and Astro.</p> </footer> <!-- Inject the mobile navigation script globally --> <script src="/js/components/mobile-nav.js" defer></script> </body> </html>
+</section>
