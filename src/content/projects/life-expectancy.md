@@ -1,6 +1,6 @@
 ---
 title: "Life Expectancy Dashboard"
-description: ""
+description: "An interactive Dash application visualizing global life expectancy data. Features histograms, map visualizations, and country-specific analysis."
 ---
 
 <section class="container">

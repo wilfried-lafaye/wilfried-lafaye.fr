@@ -1,6 +1,6 @@
 ---
 title: "Time Groupe Assistant RAG"
-description: ""
+description: "An AI assistant leveraging Retrieval-Augmented Generation (RAG) to provide context-aware responses."
 ---
 
 <section class="container">

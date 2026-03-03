@@ -1,6 +1,6 @@
 ---
 title: "R Data Mining"
-description: ""
+description: "Data mining & NLP projects in R featuring Bayesian classification, LDA/AFD, Word2Vec, TF-IDF, and advanced sentiment analysis with professional R Markdown reporting."
 ---
 
 <section class="container">

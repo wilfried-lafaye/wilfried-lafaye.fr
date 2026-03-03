@@ -1,6 +1,6 @@
 ---
 title: "Silent Steps"
-description: ""
+description: "A Python text-based adventure game played via a retro web terminal interface. Escape the facility by solving puzzles and interacting with characters."
 ---
 
 <section class="container">

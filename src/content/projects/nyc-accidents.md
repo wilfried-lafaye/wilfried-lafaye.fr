@@ -1,6 +1,6 @@
 ---
 title: "NYC Accidents SQL Model"
-description: ""
+description: "A data engineering project enabling SQL analysis on NYC traffic accident data through normalization and a Streamlit dashboard."
 ---
 
 <section class="container">

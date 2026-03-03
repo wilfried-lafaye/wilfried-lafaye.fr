@@ -16,13 +16,12 @@
     "id": "project-1",
     "title": "wilfried-lafaye.fr",
     "category": "personal",
-    "description": "Repository hosting the source code and assets of my personal website, including HTML, CSS, JS, and deployment resources.",
+    "description": "My personal portfolio website built with Astro, featuring dynamic Markdown-based project pages, glassmorphism design, and automated static generation.",
     "technologies": [
+      "Astro",
       "HTML",
       "CSS",
       "JavaScript",
-      "React",
-      "Next.js",
       "GitHub Pages"
     ],
     "link": "projects/wilfried-lafaye.html",

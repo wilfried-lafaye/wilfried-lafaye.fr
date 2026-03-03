@@ -1,6 +1,6 @@
 ---
 title: "Calendar Mirror"
-description: ""
+description: "An application for mirroring calendar events, built for iOS/macOS using Swift."
 ---
 
 <section class="container">

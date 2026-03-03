@@ -1,6 +1,6 @@
 ---
 title: "Phase Vocoder Speech"
-description: ""
+description: "Real-time audio time-stretching without pitch alteration using Phase Vocoder algorithms."
 ---
 
 <section class="container">

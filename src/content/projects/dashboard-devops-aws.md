@@ -1,6 +1,6 @@
 ---
 title: "Dashboard DevOps AWS"
-description: ""
+description: "Monorepo combining a Flask dashboard for visualizing air quality in France and DevOps documentation built with Quartz, featuring automated deployment to AWS (EKS) and Cloudflare Pages."
 ---
 
 <section class="container">

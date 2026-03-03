@@ -1,6 +1,6 @@
 ---
 title: "Investment Tracker"
-description: ""
+description: "A responsive React application for tracking personal investments with local data persistence and real-time performance visualization."
 ---
 
 <section class="container">

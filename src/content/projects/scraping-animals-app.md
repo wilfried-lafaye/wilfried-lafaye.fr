@@ -1,6 +1,6 @@
 ---
 title: "Scraping Animals Pipeline"
-description: ""
+description: "End-to-end data pipeline to scrape, store, and visualize extensive animal data."
 ---
 
 <section class="container">
