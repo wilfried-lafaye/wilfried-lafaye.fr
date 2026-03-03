@@ -10,7 +10,7 @@ async function loadProjects() {
     </div>
     <h3>${project.title}</h3>
     <p>${project.description}</p>
-    <a href="${project.link}" class="btn-secondary" style="margin-top:auto;">View Project &rarr;</a>
+    <a href="${project.link}" class="btn-secondary" aria-label="View details for ${project.title}" style="margin-top:auto;">View Project &rarr;</a>
   </div>
   `).join('');
 }
