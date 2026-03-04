@@ -1,15 +1,27 @@
 async function loadExperience() {
   const response = await fetch("data/experience.json");
-  const experience = await response.json();
+  const experienceData = await response.json();
   const container = document.querySelector("#experience-list");
 
-  container.innerHTML = experience.map(exp => `
-    <div class="experience-card">
-      <h3>${exp.title}</h3>
-      <span class="role">@ ${exp.company}</span>
-      <p class="date">${exp.years}</p>
-      <p>${exp.description}</p>
-    </div>
-  `).join('');
+  container.innerHTML = experienceData.map(periodData => {
+    // Generate inner cards for each role in this period
+    const rolesHtml = periodData.roles.map(role => `
+      <div class="experience-role-card">
+        <h3>${role.title}</h3>
+        <span class="role">@ ${role.company}</span>
+        <p>${role.description}</p>
+      </div>
+    `).join('');
+
+    // Outer container represents the period node on the timeline
+    return `
+      <div class="experience-card period-group">
+        <div class="period-badge">${periodData.period}</div>
+        <div class="period-roles">
+          ${rolesHtml}
+        </div>
+      </div>
+    `;
+  }).join('');
 }
 document.addEventListener("DOMContentLoaded", loadExperience);
