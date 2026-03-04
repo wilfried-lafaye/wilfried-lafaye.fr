@@ -785,3 +785,45 @@ footer {
   display: flex;
   gap: 0.5rem;
 }
+/* --- Simplified Skills Bubbles --- */
+.skills-cloud {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.skill-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skill-category-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+}
+
+.skill-pills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-pill {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.skill-pill:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--accent-primary);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}

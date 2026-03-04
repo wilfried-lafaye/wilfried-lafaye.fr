@@ -1,56 +1,32 @@
 /**
- * Skills component — renders categorized tech stack with inline SVG icons.
+ * Skills component — simple text-based bubbles
  */
+function loadSkills() {
+  const skills = {
+    "Languages": ["Python", "SQL", "JavaScript", "HTML/CSS"],
+    "AI / ML": ["PyTorch", "TensorFlow", "Scikit-learn", "Deep Learning"],
+    "Data": ["Pandas", "NumPy", "Data Visualization", "Data Manipulation"],
+    "Tools": ["Git", "Docker", "Astro", "GitHub Actions"]
+  };
 
-// Inline SVG icons (simplified, monochrome-friendly)
-const ICONS = {
-  Python: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.96 3.403 5.96h2.03v-2.867s-.109-3.403 3.35-3.403h5.766s3.24.052 3.24-3.134V3.193S18.28 0 11.914 0zM8.708 1.85a1.06 1.06 0 110 2.118 1.06 1.06 0 010-2.118z"/><path d="M12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752h-5.814v-.826H20.1s3.9.445 3.9-5.735c0-6.18-3.403-5.96-3.403-5.96h-2.03v2.867s.109 3.403-3.35 3.403H9.451s-3.24-.052-3.24 3.134v5.332S5.72 24 12.086 24zm3.206-1.85a1.06 1.06 0 110-2.118 1.06 1.06 0 010 2.118z"/></svg>',
-  SQL: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 3.79 2 6v12c0 2.21 4.48 4 10 4s10-1.79 10-4V6c0-2.21-4.48-4-10-4zm0 2c4.42 0 8 1.34 8 3s-3.58 3-8 3-8-1.34-8-3 3.58-3 8-3zM4 18V9.87c1.73 1.29 4.61 2.13 8 2.13s6.27-.84 8-2.13V18c0 1.1-3.58 2-8 2s-8-.9-8-2z"/></svg>',
-  JavaScript: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.405-.6-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.29-.81 3.54.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-1.95 0-3.9 0-5.87l.004-.365z"/></svg>',
-  'HTML/CSS': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.071-.757.541-6.028H5.745l1.468 16.5 4.795 1.312 4.854-1.375.665-7.437H9.066l.465 4.5h6.19l-.232 2.718-3.544.944-3.463-.944z"/></svg>',
-  PyTorch: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.005 0L4.952 7.053a9.865 9.865 0 000 13.94 9.866 9.866 0 0013.94 0 9.866 9.866 0 000-13.94l-2.824 2.823a5.842 5.842 0 010 8.293 5.842 5.842 0 01-8.294 0 5.842 5.842 0 010-8.293l4.47-4.47 1.476-1.476L12.005 0zm4.99 4.39a1.248 1.248 0 100 2.497 1.248 1.248 0 000-2.496z"/></svg>',
-  TensorFlow: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.292 5.856L11.54 0v24l-4.095-2.378V7.603l-3.11 1.81-3.042-1.768zm21.416 0L12.46 0v24l4.095-2.378V14.29l3.11 1.81V9.836l-3.11-1.81V5.267l3.11 1.81 3.043-1.768z"/></svg>',
-  'Scikit-learn': '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 12h10M12 7v10M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>',
-  'Deep Learning': '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="4" cy="6" r="2"/><circle cx="4" cy="12" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="12" cy="8" r="2"/><circle cx="12" cy="16" r="2"/><circle cx="20" cy="12" r="2"/><line x1="6" y1="6" x2="10" y2="8" stroke="currentColor" stroke-width="0.8"/><line x1="6" y1="12" x2="10" y2="8" stroke="currentColor" stroke-width="0.8"/><line x1="6" y1="12" x2="10" y2="16" stroke="currentColor" stroke-width="0.8"/><line x1="6" y1="18" x2="10" y2="16" stroke="currentColor" stroke-width="0.8"/><line x1="14" y1="8" x2="18" y2="12" stroke="currentColor" stroke-width="0.8"/><line x1="14" y1="16" x2="18" y2="12" stroke="currentColor" stroke-width="0.8"/></svg>',
-  Pandas: '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="1" width="3.5" height="7" rx="0.5"/><rect x="5" y="10" width="3.5" height="4" rx="0.5"/><rect x="5" y="16" width="3.5" height="7" rx="0.5"/><rect x="10.25" y="5" width="3.5" height="4" rx="0.5"/><rect x="15.5" y="1" width="3.5" height="7" rx="0.5"/><rect x="15.5" y="10" width="3.5" height="4" rx="0.5"/><rect x="15.5" y="16" width="3.5" height="7" rx="0.5"/></svg>',
-  NumPy: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M10.315 4.876L6.68 3.054 1.725 5.574l3.59 1.842zm1.629.836l3.636 1.86-3.263 1.68-3.635-1.862zm6.525 1.12L12.4 9.804v4.788l3.415-1.752V8.316l2.654-1.365zm-8.155 6.4V8.448L7.1 6.59v4.783zm0 1.92v4.837l-5.94-3.07V11.97l3.63 1.87v.166l-.002.014zm1.63-.036l5.938-3.048v4.847l-5.939 3.07z"/></svg>',
-  'Data Visualization': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7 14l4-4 3 3 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  'Data Manipulation': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="19" cy="17" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M21 19l1.5 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
-  Git: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.546 10.93L13.067.452a1.55 1.55 0 00-2.188 0L8.708 2.627l2.76 2.76a1.838 1.838 0 012.327 2.341l2.66 2.66a1.838 1.838 0 011.9 3.039 1.837 1.837 0 01-2.6 0 1.846 1.846 0 01-.404-2.019l-2.48-2.48v6.53a1.844 1.844 0 01.486 2.88 1.838 1.838 0 01-2.598 0 1.838 1.838 0 010-2.598c.18-.18.387-.316.612-.406V9.31a1.844 1.844 0 01-.998-2.41L7.636 4.16.45 11.344a1.55 1.55 0 000 2.189l10.48 10.477a1.55 1.55 0 002.186 0l10.43-10.43a1.55 1.55 0 000-2.188z"/></svg>',
-  Docker: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.186.186 0 00-.187.186v1.887c0 .103.084.185.187.185zm-2.954-5.43h2.118a.186.186 0 00.187-.185V3.575a.186.186 0 00-.187-.186h-2.118a.186.186 0 00-.187.186v1.888c0 .102.084.185.187.185zm0 2.716h2.118a.187.187 0 00.187-.186V6.29a.187.187 0 00-.187-.186h-2.118a.187.187 0 00-.187.186v1.887c0 .103.084.186.187.186zm-2.93 0h2.12a.186.186 0 00.186-.186V6.29a.186.186 0 00-.187-.186H8.1a.186.186 0 00-.185.186v1.887c0 .103.083.186.185.186zm-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.186.186 0 00-.185-.186H5.136a.186.186 0 00-.186.186v1.887c0 .103.084.186.186.186zm5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.187.187 0 00-.187.186v1.887c0 .103.084.185.187.185zm-2.93 0h2.12a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186h-2.12a.186.186 0 00-.184.186v1.887c0 .103.083.185.185.185zm-2.964 0h2.119a.186.186 0 00.185-.185V9.006a.186.186 0 00-.185-.186H5.136a.186.186 0 00-.186.186v1.887c0 .103.084.185.186.185zm-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186H2.216a.186.186 0 00-.186.186v1.887c0 .103.084.185.186.185zM23.078 9.58c-.06-.036-.09-.054-.15-.09-.18-.108-.39-.198-.63-.27-.06-.018-.12-.036-.18-.048-.24-.048-.48-.078-.75-.078-.96 0-1.68.42-2.16.96-.36.42-.54.93-.62 1.38H.94c-.54 0-.94.42-.94.93v.03c.06.54.12 1.29.36 2.07.3.93.78 1.74 1.5 2.37.84.72 1.95 1.17 3.45 1.17 1.14 0 2.16-.24 3.06-.66.72-.33 1.32-.78 1.86-1.32.54-.54.96-1.14 1.32-1.77.18-.3.33-.63.45-.93h.27c.12.3.27.63.45.93.36.63.78 1.23 1.32 1.77.54.54 1.14.99 1.86 1.32.9.42 1.92.66 3.06.66 1.5 0 2.61-.45 3.45-1.17.72-.63 1.2-1.44 1.5-2.37.24-.78.3-1.53.36-2.07v-.03c0-.51-.42-.93-.93-.93h-.06z"/></svg>',
-  Astro: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.074 16.86C15.354 17.74 14.26 18.38 13.066 18.38c-1.2 0-2.278-.64-3.002-1.52-.206-.252-.396-.528-.556-.816l4.316-1.792.852-.36 3.294-1.368c-.12-.444-.276-.876-.468-1.284L12.226 13.5l-3.36 1.392a8.87 8.87 0 01-.12-.78L14.386 12l4.8-2.004c-.564-1.404-1.524-2.616-2.76-3.468L8.214 9.996 6.564 3.24l-.3 0C3.6 3.24 1.2 5.64 1.2 8.304c0 .6.108 1.176.312 1.716L6.246 8.4l1.86-.78c.06.27.132.534.222.792L3.492 10.5l-1.008.42c.636 1.596 1.776 2.928 3.222 3.81l5.256-2.184 1.668-.696c.072.264.162.522.264.768l-6.498 2.7c1.62 1.824 4.002 2.982 6.648 2.982a9.906 9.906 0 005.694-1.788L16.074 16.86z"/><path d="M8.724 2.1c.06-.18.186-.3.372-.3s.312.12.372.3l1.524 5.478h.012L15.39 1.74c.054-.18.186-.3.372-.3.188 0 .318.12.372.3l2.562 9.21a.38.38 0 01-.264.468.38.38 0 01-.468-.264L15.762 3.06l-4.344 5.898a.373.373 0 01-.312.162.373.373 0 01-.312-.162L9.24 3.048 6.894 11.16a.38.38 0 01-.468.264.38.38 0 01-.264-.468L8.724 2.1z"/></svg>',
-  'GitHub Actions': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>'
-};
-
-// Category accent colors (border + icon tint)
-const CATEGORY_COLORS = {
-  'Languages': { border: 'rgba(59, 130, 246, 0.3)', icon: '#3b82f6', label: '💻 Languages' },
-  'AI / ML': { border: 'rgba(168, 85, 247, 0.3)', icon: '#a855f7', label: '🧠 AI / ML' },
-  'Data': { border: 'rgba(34, 197, 94, 0.3)', icon: '#22c55e', label: '📊 Data' },
-  'Tools': { border: 'rgba(251, 146, 60, 0.3)', icon: '#fb923c', label: '🛠 Tools' }
-};
-
-async function loadSkills() {
-  const response = await fetch("data/skills.json");
-  const skills = await response.json();
   const container = document.querySelector("#skills-list");
+  if (!container) return;
 
   container.innerHTML = Object.entries(skills).map(([category, items]) => {
-    const colors = CATEGORY_COLORS[category] || { border: 'rgba(255,255,255,0.1)', icon: '#fff', label: category };
+    const pills = items.map(skill => `<span class="skill-pill">${skill}</span>`).join('');
 
-    const pills = items.map(skill => {
-      const icon = ICONS[skill] || '';
-      return `<div class="skill-tag" style="border-color: ${colors.border}">
-        ${icon ? `<span class="skill-icon" style="color: ${colors.icon}">${icon}</span>` : ''}
-        <span>${skill}</span>
-      </div>`;
-    }).join('');
-
-    return `<div class="skill-category">
-      <h3 class="skill-category-title">${colors.label}</h3>
-      <div class="skill-category-pills">${pills}</div>
-    </div>`;
+    return `
+            <div class="skill-group">
+                <h3 class="skill-category-title">${category}</h3>
+                <div class="skill-pills-container">${pills}</div>
+            </div>
+        `;
   }).join('');
 }
 
-document.addEventListener("DOMContentLoaded", loadSkills);
+// Immediate execution with fallback
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadSkills);
+} else {
+  loadSkills();
+}
