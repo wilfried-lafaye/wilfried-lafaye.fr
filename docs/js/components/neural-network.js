@@ -94,11 +94,9 @@
     }
 
     function resize() {
-        const hero = document.getElementById('hero') || canvas.parentElement;
-        const rect = hero.getBoundingClientRect();
         const dpr = window.devicePixelRatio || 1;
-        width = rect.width;
-        height = rect.height;
+        width = window.innerWidth;
+        height = window.innerHeight;
         canvas.width = width * dpr;
         canvas.height = height * dpr;
         canvas.style.width = width + 'px';
@@ -187,28 +185,24 @@
         animationId = requestAnimationFrame(animate);
     }
 
-    // --- Event Listeners (on hero section, since canvas has pointer-events: none) ---
-    const heroEl = document.getElementById('hero') || canvas.parentElement;
-
-    heroEl.addEventListener('mousemove', (e) => {
-        const rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
+    // --- Event Listeners (on document, since canvas is full background) ---
+    document.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
     });
 
-    heroEl.addEventListener('mouseleave', () => {
+    document.documentElement.addEventListener('mouseleave', () => {
         mouse.x = null;
         mouse.y = null;
     });
 
     // Touch support for mobile
-    heroEl.addEventListener('touchmove', (e) => {
-        const rect = canvas.getBoundingClientRect();
-        mouse.x = e.touches[0].clientX - rect.left;
-        mouse.y = e.touches[0].clientY - rect.top;
+    document.addEventListener('touchmove', (e) => {
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
     }, { passive: true });
 
-    heroEl.addEventListener('touchend', () => {
+    document.addEventListener('touchend', () => {
         mouse.x = null;
         mouse.y = null;
     });

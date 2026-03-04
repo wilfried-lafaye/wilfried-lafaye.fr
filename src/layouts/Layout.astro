@@ -17,6 +17,7 @@ const { title, description } = Astro.props;
 		<BaseHead title={title} description={description} />
 	</head>
 	<body>
+		<canvas id="neural-canvas"></canvas>
 		<Header />
 		<main>
 			<slot />
@@ -27,5 +28,6 @@ const { title, description } = Astro.props;
 		<script src="/js/components/mobile-nav.js" is:inline defer></script>
 		<script src="/js/components/scroll-reveal.js" is:inline defer></script>
 		<script src="/js/components/active-nav.js" is:inline defer></script>
+		<script src="/js/components/neural-network.js" is:inline defer></script>
 	</body>
 </html>
