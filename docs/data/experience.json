@@ -1,20 +1,33 @@
 [
   {
-    "years": "2025 – present",
-    "title": "CEO & Owner",
-    "company": "SWDTAIL (Car detailing) | Essonne, France",
-    "description": "Co-founder, led intensive project → mastered roadmap creation & objective tracking; gained strong marketing & public speaking skills via client outreach & online video production."
-  },
-  {
-    "years": "May 2026 – Aug 2026",
-    "title": "AI Project Manager",
-    "company": "TIME GROUPE | Montreal, Canada",
-    "description": "Independently led multiple small-scale AI initiatives to reduce operational costs and increase revenue; designed and implemented automation solutions end-to-end; developed an internal AI assistant to optimize employee scheduling and streamline workforce management."
-  },
-  {
-    "years": "2025 – present",
-    "title": "Student Job - Logistics Employee",
-    "company": "IKEA | Evry, Essonne, France",
-    "description": "Just-in-time order picker → delivered high-quality results under tight deadlines; honed efficiency and reliability in fast-paced environments."
+    "period": "2025 – Present",
+    "roles_start": [
+      {
+        "title": "CEO & Owner",
+        "company": "SWDTAIL (Car detailing) | Essonne, France",
+        "description": "Co-founder, led intensive project → mastered roadmap creation & objective tracking; gained strong marketing & public speaking skills via client outreach & online video production."
+      }
+    ],
+    "nested": [
+      {
+        "period": "May 2026 – Aug 2026",
+        "roles_start": [
+          {
+            "title": "AI Project Manager",
+            "company": "TIME GROUPE | Montreal, Canada",
+            "description": "Independently led multiple small-scale AI initiatives to reduce operational costs and increase revenue; designed and implemented automation solutions end-to-end; developed an internal AI assistant to optimize employee scheduling and streamline workforce management."
+          }
+        ],
+        "nested": [],
+        "roles_end": []
+      }
+    ],
+    "roles_end": [
+      {
+        "title": "Student Job - Logistics Employee",
+        "company": "IKEA | Evry, Essonne, France",
+        "description": "Just-in-time order picker → delivered high-quality results under tight deadlines; honed efficiency and reliability in fast-paced environments."
+      }
+    ]
   }
 ]

@@ -1,27 +1,42 @@
 async function loadExperience() {
-  const response = await fetch("data/experience.json?v=4");
-  const experienceData = await response.json();
+  const response = await fetch("data/experience.json?v=6");
+  const data = await response.json();
   const container = document.querySelector("#experience-list");
 
-  // Output a single wrapper for all roles to float within
-  const rolesHtml = experienceData.map((role, index) => {
-    // Determine side based on index for desktop (even = left, odd = right)
-    const sideClass = (index % 2 === 0) ? 'timeline-left' : 'timeline-right';
-    return `
-      <div class="experience-role-card ${sideClass}">
-        <div class="role-date-badge">${role.years}</div>
+  function renderRoles(roles) {
+    if (!roles || roles.length === 0) return '';
+    return roles.map(role => `
+      <div class="fresco-card">
         <h3>${role.title}</h3>
         <span class="role">@ ${role.company}</span>
         <p>${role.description}</p>
       </div>
-    `;
-  }).join('');
+    `).join('');
+  }
 
-  container.innerHTML = `
-    <div class="continuous-timeline-container">
-      ${rolesHtml}
-      <div class="clearfix"></div>
-    </div>
-  `;
+  function renderBracket(node) {
+    const startHtml = renderRoles(node.roles_start);
+    const endHtml = renderRoles(node.roles_end);
+
+    let nestedHtml = '';
+    if (node.nested && node.nested.length > 0) {
+      nestedHtml = `<div class="fresco-nested">` + node.nested.map(renderBracket).join('') + `</div>`;
+    }
+
+    return `
+      <div class="fresco-bracket">
+        <div class="fresco-badge">${node.period}</div>
+        <div class="fresco-content">
+           ${startHtml}
+           ${nestedHtml}
+           ${endHtml}
+        </div>
+      </div>
+    `;
+  }
+
+  // Clear previous classes and add the container class directly to the structure
+  container.className = "";
+  container.innerHTML = `<div class="fresco-container">` + data.map(renderBracket).join('') + `</div>`;
 }
 document.addEventListener("DOMContentLoaded", loadExperience);

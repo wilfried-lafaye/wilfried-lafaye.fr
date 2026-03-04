@@ -380,56 +380,90 @@ section {
   margin-bottom: 1rem;
 }
 
-/* --- Experience Timeline (Continuous Parallel) --- */
-.parallel-timeline {
-  max-width: 1000px;
+/* --- Experience Timeline (Nested Fresco) --- */
+.fresco-container {
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
-  padding: 0;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  padding-left: 1.5rem;
 }
 
-.continuous-timeline-container {
+.fresco-bracket {
   position: relative;
-  width: 100%;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+  border-left: 2px solid var(--accent-primary);
+  border-radius: 6px 0 0 6px;
+  margin-top: 1rem;
 }
 
-.role-date-badge {
+/* Bracket horizontal ticks (top and bottom) */
+.fresco-bracket::before,
+.fresco-bracket::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 15px;
+  height: 2px;
+  background: var(--accent-primary);
+}
+
+.fresco-bracket::before {
+  top: 0;
+}
+
+.fresco-bracket::after {
+  bottom: 0;
+}
+
+.fresco-badge {
   display: inline-block;
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--accent-primary);
-  background: rgba(59, 130, 246, 0.1);
-  padding: 0.2rem 0.6rem;
-  border-radius: 5px;
-  margin-bottom: 0.8rem;
+  color: #fff;
+  background: var(--accent-primary);
+  padding: 0.2rem 0.8rem;
+  border-radius: 50px;
+  margin-top: -11px;
+  /* exact alignment on the top bracket tick */
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.3);
 }
 
-.experience-role-card {
+.fresco-content {
+  padding-bottom: 0.5rem;
+}
+
+/* Card Styling inside the bracket */
+.fresco-card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
   position: relative;
   width: 100%;
   box-sizing: border-box;
 }
 
-.experience-role-card:hover {
+.fresco-card:hover {
   transform: translateY(-2px);
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-.experience-role-card h3 {
+.fresco-card h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
-.experience-role-card .role {
+.fresco-card .role {
   color: var(--accent-primary);
   font-weight: 500;
   display: block;
@@ -437,81 +471,36 @@ section {
   font-size: 0.95rem;
 }
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+/* Nested element specific styling */
+.fresco-nested {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
 }
 
-/* Desktop Dual Column View */
+.fresco-nested .fresco-bracket {
+  border-left-color: #a855f7;
+  /* Sub-level purple coloring */
+}
+
+.fresco-nested .fresco-bracket::before,
+.fresco-nested .fresco-bracket::after {
+  background: #a855f7;
+}
+
+.fresco-nested .fresco-badge {
+  background: #a855f7;
+  box-shadow: 0 2px 10px rgba(168, 85, 247, 0.3);
+}
+
+.fresco-nested .fresco-card .role {
+  color: #a855f7;
+}
+
+/* Desktop sizing tweaks */
 @media (min-width: 768px) {
-  .parallel-timeline::after {
-    content: '';
-    position: absolute;
-    width: 2px;
-    background: rgba(255, 255, 255, 0.1);
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -1px;
-    z-index: 1;
-  }
-
-  .experience-role-card {
-    width: calc(50% - 2rem);
-  }
-
-  .experience-role-card.timeline-left {
-    float: left;
-    clear: left;
-  }
-
-  .experience-role-card.timeline-right {
-    float: right;
-    clear: right;
-    margin-top: 4rem;
-    /* offset right column down to stagger */
-  }
-
-  /* Connecting lines to center */
-  .experience-role-card.timeline-left::before,
-  .experience-role-card.timeline-right::before {
-    content: '';
-    position: absolute;
-    top: 2rem;
-    width: 2rem;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.1);
-    z-index: 1;
-  }
-
-  .experience-role-card.timeline-left::before {
-    right: -2rem;
-  }
-
-  .experience-role-card.timeline-right::before {
-    left: -2rem;
-  }
-
-  /* Dots on the center line */
-  .experience-role-card.timeline-left::after,
-  .experience-role-card.timeline-right::after {
-    content: '';
-    position: absolute;
-    top: 1.65rem;
-    width: 0.8rem;
-    height: 0.8rem;
-    background: var(--accent-primary);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--accent-primary);
-  }
-
-  .experience-role-card.timeline-left::after {
-    right: -2.4rem;
-  }
-
-  .experience-role-card.timeline-right::after {
-    left: -2.4rem;
+  .fresco-container {
+    padding-left: 3rem;
   }
 }
 
