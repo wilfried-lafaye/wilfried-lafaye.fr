@@ -338,6 +338,7 @@ section {
 }
 
 /* --- Experience & Education --- */
+/* --- Education Timeline (Standard) --- */
 .timeline-container {
   max-width: 800px;
   margin: 0 auto;
@@ -345,13 +346,11 @@ section {
   padding-left: 2rem;
 }
 
-.experience-card,
 .education-card {
   margin-bottom: 3.5rem;
   position: relative;
 }
 
-.experience-card::before,
 .education-card::before {
   content: '';
   position: absolute;
@@ -364,6 +363,44 @@ section {
   box-shadow: 0 0 10px var(--accent-primary);
 }
 
+.education-card h3 {
+  font-size: 1.2rem;
+}
+
+.education-card .degree {
+  color: var(--accent-primary);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.education-card .date {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+/* --- Experience Timeline (Parallel / Dual Column) --- */
+.parallel-timeline {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+}
+
+.period-group {
+  position: relative;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
+.timeline-center-node {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 2rem;
+}
+
 .period-badge {
   display: inline-block;
   font-size: 0.85rem;
@@ -374,7 +411,11 @@ section {
   background: rgba(59, 130, 246, 0.1);
   padding: 0.3rem 0.8rem;
   border-radius: 50px;
-  margin-bottom: 1.5rem;
+}
+
+.period-roles-container {
+  position: relative;
+  width: 100%;
 }
 
 .experience-role-card {
@@ -382,8 +423,11 @@ section {
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .experience-role-card:hover {
@@ -392,9 +436,9 @@ section {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-.experience-role-card h3,
-.education-card h3 {
+.experience-role-card h3 {
   font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .experience-role-card .role {
@@ -405,10 +449,81 @@ section {
   font-size: 0.95rem;
 }
 
-.date {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  opacity: 0.8;
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Desktop Dual Column View */
+@media (min-width: 768px) {
+  .parallel-timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    z-index: 1;
+  }
+
+  .experience-role-card {
+    width: calc(50% - 2rem);
+  }
+
+  .experience-role-card.timeline-left {
+    float: left;
+    clear: left;
+  }
+
+  .experience-role-card.timeline-right {
+    float: right;
+    clear: right;
+  }
+
+  /* Dots on the center line */
+  .experience-role-card.timeline-left::after,
+  .experience-role-card.timeline-right::after {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-primary);
+    z-index: 2;
+  }
+
+  .experience-role-card.timeline-left::after {
+    right: -2.4rem;
+  }
+
+  .experience-role-card.timeline-right::after {
+    left: -2.4rem;
+  }
+
+  /* Connecting lines */
+  .experience-role-card.timeline-left::before,
+  .experience-role-card.timeline-right::before {
+    content: '';
+    position: absolute;
+    top: 2.35rem;
+    /* center with dot */
+    width: 2rem;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .experience-role-card.timeline-left::before {
+    right: -2rem;
+  }
+
+  .experience-role-card.timeline-right::before {
+    left: -2rem;
+  }
 }
 
 /* --- Skills --- */
