@@ -140,6 +140,11 @@ section {
   color: white;
 }
 
+.navbar nav a.nav-active {
+  color: white;
+  box-shadow: 0 2px 0 0 var(--accent-primary);
+}
+
 .navbar nav .btn-primary {
   margin-left: 2rem;
   padding: 0.5rem 1rem;
