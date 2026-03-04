@@ -25,7 +25,7 @@ const ICONS = {
 // Category accent colors (border + icon tint)
 const CATEGORY_COLORS = {
   'Languages': { border: 'rgba(59, 130, 246, 0.3)', icon: '#3b82f6', label: '💻 Languages' },
-  'AI & ML': { border: 'rgba(168, 85, 247, 0.3)', icon: '#a855f7', label: '🧠 AI & ML' },
+  'AI / ML': { border: 'rgba(168, 85, 247, 0.3)', icon: '#a855f7', label: '🧠 AI / ML' },
   'Data': { border: 'rgba(34, 197, 94, 0.3)', icon: '#22c55e', label: '📊 Data' },
   'Tools': { border: 'rgba(251, 146, 60, 0.3)', icon: '#fb923c', label: '🛠 Tools' }
 };
