@@ -1,5 +1,6 @@
 /**
- * Skills component — renders categorized tech stack with inline SVG icons.
+ * Skills component — renders categorized tech stack with inline SVG icons,
+ * glassmorphism card containers, animated number counters, and hover effects.
  */
 
 // Inline SVG icons (simplified, monochrome-friendly)
@@ -18,39 +19,71 @@ const ICONS = {
   'Data Manipulation': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="19" cy="17" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M21 19l1.5 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
   Git: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.546 10.93L13.067.452a1.55 1.55 0 00-2.188 0L8.708 2.627l2.76 2.76a1.838 1.838 0 012.327 2.341l2.66 2.66a1.838 1.838 0 011.9 3.039 1.837 1.837 0 01-2.6 0 1.846 1.846 0 01-.404-2.019l-2.48-2.48v6.53a1.844 1.844 0 01.486 2.88 1.838 1.838 0 01-2.598 0 1.838 1.838 0 010-2.598c.18-.18.387-.316.612-.406V9.31a1.844 1.844 0 01-.998-2.41L7.636 4.16.45 11.344a1.55 1.55 0 000 2.189l10.48 10.477a1.55 1.55 0 002.186 0l10.43-10.43a1.55 1.55 0 000-2.188z"/></svg>',
   Docker: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.186.186 0 00-.187.186v1.887c0 .103.084.185.187.185zm-2.954-5.43h2.118a.186.186 0 00.187-.185V3.575a.186.186 0 00-.187-.186h-2.118a.186.186 0 00-.187.186v1.888c0 .102.084.185.187.185zm0 2.716h2.118a.187.187 0 00.187-.186V6.29a.187.187 0 00-.187-.186h-2.118a.187.187 0 00-.187.186v1.887c0 .103.084.186.187.186zm-2.93 0h2.12a.186.186 0 00.186-.186V6.29a.186.186 0 00-.187-.186H8.1a.186.186 0 00-.185.186v1.887c0 .103.083.186.185.186zm-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.186.186 0 00-.185-.186H5.136a.186.186 0 00-.186.186v1.887c0 .103.084.186.186.186zm5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.187.187 0 00-.187.186v1.887c0 .103.084.185.187.185zm-2.93 0h2.12a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186h-2.12a.186.186 0 00-.184.186v1.887c0 .103.083.185.185.185zm-2.964 0h2.119a.186.186 0 00.185-.185V9.006a.186.186 0 00-.185-.186H5.136a.186.186 0 00-.186.186v1.887c0 .103.084.185.186.185zm-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186H2.216a.186.186 0 00-.186.186v1.887c0 .103.084.185.186.185zM23.078 9.58c-.06-.036-.09-.054-.15-.09-.18-.108-.39-.198-.63-.27-.06-.018-.12-.036-.18-.048-.24-.048-.48-.078-.75-.078-.96 0-1.68.42-2.16.96-.36.42-.54.93-.62 1.38H.94c-.54 0-.94.42-.94.93v.03c.06.54.12 1.29.36 2.07.3.93.78 1.74 1.5 2.37.84.72 1.95 1.17 3.45 1.17 1.14 0 2.16-.24 3.06-.66.72-.33 1.32-.78 1.86-1.32.54-.54.96-1.14 1.32-1.77.18-.3.33-.63.45-.93h.27c.12.3.27.63.45.93.36.63.78 1.23 1.32 1.77.54.54 1.14.99 1.86 1.32.9.42 1.92.66 3.06.66 1.5 0 2.61-.45 3.45-1.17.72-.63 1.2-1.44 1.5-2.37.24-.78.3-1.53.36-2.07v-.03c0-.51-.42-.93-.93-.93h-.06z"/></svg>',
-  Astro: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.074 16.86C15.354 17.74 14.26 18.38 13.066 18.38c-1.2 0-2.278-.64-3.002-1.52-.206-.252-.396-.528-.556-.816l4.316-1.792.852-.36 3.294-1.368c-.12-.444-.276-.876-.468-1.284L12.226 13.5l-3.36 1.392a8.87 8.87 0 01-.12-.78L14.386 12l4.8-2.004c-.564-1.404-1.524-2.616-2.76-3.468L8.214 9.996 6.564 3.24l-.3 0C3.6 3.24 1.2 5.64 1.2 8.304c0 .6.108 1.176.312 1.716L6.246 8.4l1.86-.78c.06.27.132.534.222.792L3.492 10.5l-1.008.42c.636 1.596 1.776 2.928 3.222 3.81l5.256-2.184 1.668-.696c.072.264.162.522.264.768l-6.498 2.7c1.62 1.824 4.002 2.982 6.648 2.982a9.906 9.906 0 005.694-1.788L16.074 16.86z"/><path d="M8.724 2.1c.06-.18.186-.3.372-.3s.312.12.372.3l1.524 5.478h.012L15.39 1.74c.054-.18.186-.3.372-.3.188 0 .318.12.372.3l2.562 9.21a.38.38 0 01-.264.468.38.38 0 01-.468-.264L15.762 3.06l-4.344 5.898a.373.373 0 01-.312.162.373.373 0 01-.312-.162L9.24 3.048 6.894 11.16a.38.38 0 01-.468.264.38.38 0 01-.264-.468L8.724 2.1z"/></svg>',
+  Astro: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.074 16.86c-.72.88-1.814 1.52-3.008 1.52-1.2 0-2.278-.64-3.002-1.52-.206-.252-.396-.528-.556-.816l4.316-1.792.852-.36 3.294-1.368c-.12-.444-.276-.876-.468-1.284L12.226 13.5l-3.36 1.392a8.87 8.87 0 01-.12-.78L14.386 12l4.8-2.004c-.564-1.404-1.524-2.616-2.76-3.468L8.214 9.996 6.564 3.24l-.3 0C3.6 3.24 1.2 5.64 1.2 8.304c0 .6.108 1.176.312 1.716L6.246 8.4l1.86-.78c.06.27.132.534.222.792L3.492 10.5l-1.008.42c.636 1.596 1.776 2.928 3.222 3.81l5.256-2.184 1.668-.696c.072.264.162.522.264.768l-6.498 2.7c1.62 1.824 4.002 2.982 6.648 2.982a9.906 9.906 0 005.694-1.788z"/></svg>',
   'GitHub Actions': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>'
 };
 
-// Category accent colors (border + icon tint)
+// Category accent colors
 const CATEGORY_COLORS = {
-  'Languages': { border: 'rgba(59, 130, 246, 0.3)', icon: '#3b82f6', label: '💻 Languages' },
-  'AI / ML': { border: 'rgba(168, 85, 247, 0.3)', icon: '#a855f7', label: '🧠 AI / ML' },
-  'Data': { border: 'rgba(34, 197, 94, 0.3)', icon: '#22c55e', label: '📊 Data' },
-  'Tools': { border: 'rgba(251, 146, 60, 0.3)', icon: '#fb923c', label: '🛠 Tools' }
+  'Languages': { border: 'rgba(59, 130, 246, 0.3)', icon: '#3b82f6', label: 'Languages', emoji: '💻' },
+  'AI / ML': { border: 'rgba(168, 85, 247, 0.3)', icon: '#a855f7', label: 'AI / ML', emoji: '🧠' },
+  'Data': { border: 'rgba(34, 197, 94, 0.3)', icon: '#22c55e', label: 'Data', emoji: '📊' },
+  'Tools': { border: 'rgba(251, 146, 60, 0.3)', icon: '#fb923c', label: 'Tools', emoji: '🛠' }
 };
 
+/* ---------- Animated counter ---------- */
+function animateCounter(el, target) {
+  let current = 0;
+  const duration = 1200;
+  const step = Math.max(1, Math.floor(duration / target));
+  const timer = setInterval(() => {
+    current++;
+    el.textContent = current;
+    if (current >= target) clearInterval(timer);
+  }, step);
+}
+
+/* ---------- Main loader ---------- */
 async function loadSkills() {
   const response = await fetch("data/skills.json");
   const skills = await response.json();
   const container = document.querySelector("#skills-list");
 
   container.innerHTML = Object.entries(skills).map(([category, items]) => {
-    const colors = CATEGORY_COLORS[category] || { border: 'rgba(255,255,255,0.1)', icon: '#fff', label: category };
+    const cat = CATEGORY_COLORS[category] || { border: 'rgba(255,255,255,0.1)', icon: '#fff', label: category, emoji: '📌' };
+    const count = items.length;
 
     const pills = items.map(skill => {
       const icon = ICONS[skill] || '';
-      return `<div class="skill-tag" style="border-color: ${colors.border}">
-        ${icon ? `<span class="skill-icon" style="color: ${colors.icon}">${icon}</span>` : ''}
+      return `<div class="skill-tag" style="--pill-accent:${cat.icon}">
+        ${icon ? `<span class="skill-icon" style="color:${cat.icon}">${icon}</span>` : ''}
         <span>${skill}</span>
       </div>`;
     }).join('');
 
-    return `<div class="skill-category">
-      <h3 class="skill-category-title">${colors.label}</h3>
+    return `<div class="skill-card" style="--card-accent:${cat.icon}; --card-border:${cat.border}">
+      <div class="skill-card-header">
+        <span class="skill-card-emoji">${cat.emoji}</span>
+        <h3 class="skill-category-title">${cat.label}</h3>
+        <span class="skill-counter" data-target="${count}">0</span>
+      </div>
       <div class="skill-category-pills">${pills}</div>
     </div>`;
   }).join('');
+
+  // Animate counters when cards scroll into view
+  const counters = container.querySelectorAll('.skill-counter');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = parseInt(entry.target.dataset.target, 10);
+        animateCounter(entry.target, target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(c => observer.observe(c));
 }
 
 document.addEventListener("DOMContentLoaded", loadSkills);
