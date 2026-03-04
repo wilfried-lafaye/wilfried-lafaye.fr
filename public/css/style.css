@@ -509,14 +509,18 @@ footer {
 
   .contact-links {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: 1rem;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .contact-item {
+    display: block;
     width: 100%;
-    max-width: 280px;
     text-align: center;
+    box-sizing: border-box;
   }
 
   .mobile-menu-toggle {
