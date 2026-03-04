@@ -1,27 +1,20 @@
 [
   {
-    "period": "May 2026 – Aug 2026",
-    "roles": [
-      {
-        "title": "AI Project Manager",
-        "company": "TIME GROUPE | Montreal, Canada",
-        "description": "Independently led multiple small-scale AI initiatives to reduce operational costs and increase revenue; designed and implemented automation solutions end-to-end; developed an internal AI assistant to optimize employee scheduling and streamline workforce management."
-      }
-    ]
+    "years": "2025 – present",
+    "title": "CEO & Owner",
+    "company": "SWDTAIL (Car detailing) | Essonne, France",
+    "description": "Co-founder, led intensive project → mastered roadmap creation & objective tracking; gained strong marketing & public speaking skills via client outreach & online video production."
   },
   {
-    "period": "2025 – present",
-    "roles": [
-      {
-        "title": "CEO & Owner",
-        "company": "SWDTAIL (Car detailing) | Essonne, France",
-        "description": "Co-founder, led intensive project → mastered roadmap creation & objective tracking; gained strong marketing & public speaking skills via client outreach & online video production."
-      },
-      {
-        "title": "Student Job - Logistics Employee",
-        "company": "IKEA | Evry, Essonne, France",
-        "description": "Just-in-time order picker → delivered high-quality results under tight deadlines; honed efficiency and reliability in fast-paced environments."
-      }
-    ]
+    "years": "May 2026 – Aug 2026",
+    "title": "AI Project Manager",
+    "company": "TIME GROUPE | Montreal, Canada",
+    "description": "Independently led multiple small-scale AI initiatives to reduce operational costs and increase revenue; designed and implemented automation solutions end-to-end; developed an internal AI assistant to optimize employee scheduling and streamline workforce management."
+  },
+  {
+    "years": "2025 – present",
+    "title": "Student Job - Logistics Employee",
+    "company": "IKEA | Evry, Essonne, France",
+    "description": "Just-in-time order picker → delivered high-quality results under tight deadlines; honed efficiency and reliability in fast-paced environments."
   }
 ]

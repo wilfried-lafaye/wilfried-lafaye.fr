@@ -380,7 +380,7 @@ section {
   margin-bottom: 1rem;
 }
 
-/* --- Experience Timeline (Parallel / Dual Column) --- */
+/* --- Experience Timeline (Continuous Parallel) --- */
 .parallel-timeline {
   max-width: 1000px;
   margin: 0 auto;
@@ -388,34 +388,22 @@ section {
   padding: 0;
 }
 
-.period-group {
+.continuous-timeline-container {
   position: relative;
-  margin-bottom: 4rem;
   width: 100%;
 }
 
-.timeline-center-node {
-  text-align: center;
-  position: relative;
-  z-index: 2;
-  margin-bottom: 2rem;
-}
-
-.period-badge {
+.role-date-badge {
   display: inline-block;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--accent-primary);
   background: rgba(59, 130, 246, 0.1);
-  padding: 0.3rem 0.8rem;
-  border-radius: 50px;
-}
-
-.period-roles-container {
-  position: relative;
-  width: 100%;
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+  margin-bottom: 0.8rem;
 }
 
 .experience-role-card {
@@ -481,40 +469,20 @@ section {
   .experience-role-card.timeline-right {
     float: right;
     clear: right;
+    margin-top: 4rem;
+    /* offset right column down to stagger */
   }
 
-  /* Dots on the center line */
-  .experience-role-card.timeline-left::after,
-  .experience-role-card.timeline-right::after {
-    content: '';
-    position: absolute;
-    top: 2rem;
-    width: 0.8rem;
-    height: 0.8rem;
-    background: var(--accent-primary);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--accent-primary);
-    z-index: 2;
-  }
-
-  .experience-role-card.timeline-left::after {
-    right: -2.4rem;
-  }
-
-  .experience-role-card.timeline-right::after {
-    left: -2.4rem;
-  }
-
-  /* Connecting lines */
+  /* Connecting lines to center */
   .experience-role-card.timeline-left::before,
   .experience-role-card.timeline-right::before {
     content: '';
     position: absolute;
-    top: 2.35rem;
-    /* center with dot */
+    top: 2rem;
     width: 2rem;
     height: 2px;
     background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
   }
 
   .experience-role-card.timeline-left::before {
@@ -523,6 +491,27 @@ section {
 
   .experience-role-card.timeline-right::before {
     left: -2rem;
+  }
+
+  /* Dots on the center line */
+  .experience-role-card.timeline-left::after,
+  .experience-role-card.timeline-right::after {
+    content: '';
+    position: absolute;
+    top: 1.65rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-primary);
+  }
+
+  .experience-role-card.timeline-left::after {
+    right: -2.4rem;
+  }
+
+  .experience-role-card.timeline-right::after {
+    left: -2.4rem;
   }
 }
 
