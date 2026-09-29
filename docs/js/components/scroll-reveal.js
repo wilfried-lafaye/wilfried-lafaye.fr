@@ -7,6 +7,13 @@
     const sections = document.querySelectorAll('.section');
     if (!sections.length) return;
 
+    // Show everything immediately when motion is reduced or IntersectionObserver is unavailable
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+        sections.forEach((section) => section.classList.add('visible'));
+        return;
+    }
+
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {

@@ -1,8 +1,14 @@
 [
   {
-    "degree": "MS degree in Engineering",
-    "school": "ESIEE Paris / Gustave Eiffel University - Engineering School",
+    "degree": "Engineering Degree in Data Science & Artificial Intelligence",
+    "school": "ESIEE Paris / Gustave Eiffel University",
     "years": "2024–Present",
-    "description": "During a three-year program, I gained substantial experience working on data manipulation and machine learning projects, frequently using deep learning libraries such as PyTorch and TensorFlow. Ranked 42/97 students. Location: 93162 Noisy-Le-Grand, France."
+    "description": "During a three-year program, I gained substantial experience working on data manipulation and machine learning projects, frequently using deep learning libraries such as PyTorch and TensorFlow.. Location: 93162 Noisy-Le-Grand, France."
+  },
+  {
+    "degree": "Preparatory Classes (CPGE) MPSI/MP",
+    "school": "Lycée Parc des Loges",
+    "years": "2022–2024",
+    "description": "Classes préparatoires aux grandes écoles, maths-physique. Ranked 5th out of 25 students. Location: Évry, France."
   }
 ]

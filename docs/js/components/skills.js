@@ -13,12 +13,12 @@ function loadSkills() {
   if (!container) return;
 
   container.innerHTML = Object.entries(skills).map(([category, items]) => {
-    const pills = items.map(skill => `<span class="skill-pill">${skill}</span>`).join('');
+    const pills = items.map(skill => `<span class="skill-tag">${skill}</span>`).join('');
 
     return `
-            <div class="skill-group">
+            <div class="skill-category">
                 <h3 class="skill-category-title">${category}</h3>
-                <div class="skill-pills-container">${pills}</div>
+                <div class="skill-category-pills">${pills}</div>
             </div>
         `;
   }).join('');

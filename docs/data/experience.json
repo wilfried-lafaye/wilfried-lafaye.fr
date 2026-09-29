@@ -3,19 +3,19 @@
     "period": "2025 – Present",
     "roles_start": [
       {
-        "title": "CEO & Owner",
+        "title": "Co-founder & Developer",
         "company": "SWDTAIL (Car detailing) | Essonne, France",
-        "description": "Co-founder, led intensive project → mastered roadmap creation & objective tracking; gained strong marketing & public speaking skills via client outreach & online video production."
+        "description": "Solo development of the management app (PWA, JavaScript, Supabase): appointments, invoicing, client follow-up, PDF invoices/quotes/credit notes and data extraction from PDF invoices. Automated tests (Vitest, Playwright) and GitHub Actions CI. Client acquisition via Meta Ads, Google Ads and social media: 100+ invoiced clients, including professionals and mid-sized companies."
       }
     ],
     "nested": [
       {
-        "period": "May 2026 – Aug 2026",
+        "period": "May 2026 – Sep 2026",
         "roles_start": [
           {
-            "title": "AI Project Manager",
-            "company": "TIME GROUPE | Montreal, Canada",
-            "description": "Independently led multiple small-scale AI initiatives to reduce operational costs and increase revenue; designed and implemented automation solutions end-to-end; developed an internal AI assistant to optimize employee scheduling and streamline workforce management."
+            "title": "Dev & Data Project Manager (Digitalization)",
+            "company": "ALIA (formerly Time Groupe) | Montreal, Canada",
+            "description": "Found no usable internal data (stock, service and locker room tracked orally or on paper), so built the tool that produces it first. Independently designed and developed a PWA (Supabase/PostgreSQL, Row Level Security) for structured, timestamped tracking of stock, tasks (with photo proof) and lockers (QR code), with the help of an AI coding assistant (Claude Code). In production, used by 20+ people."
           }
         ],
         "nested": [],

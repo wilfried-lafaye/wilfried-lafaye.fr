@@ -11,7 +11,8 @@
     let width, height;
     let nodes = [];
     let mouse = { x: null, y: null };
-    let animationId;
+    let animationId = null;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     // --- Configuration ---
     const CONFIG = {
@@ -182,7 +183,14 @@
 
         drawHighlightedNodes();
 
-        animationId = requestAnimationFrame(animate);
+        animationId = null;
+        if (!reduceMotion.matches && !document.hidden) {
+            animationId = requestAnimationFrame(animate);
+        }
+    }
+
+    function startLoop() {
+        if (animationId === null) animate(0);
     }
 
     // --- Event Listeners (on document, since canvas is full background) ---
@@ -217,7 +225,28 @@
                 node.x = Math.min(node.x, width);
                 node.y = Math.min(node.y, height);
             }
+            if (reduceMotion.matches) animate(0);
         }, 200);
+    });
+
+    // Pause when the tab is hidden; respect reduced-motion (draw a single static frame)
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            if (animationId !== null) cancelAnimationFrame(animationId);
+            animationId = null;
+        } else {
+            startLoop();
+        }
+    });
+
+    reduceMotion.addEventListener('change', () => {
+        if (reduceMotion.matches) {
+            if (animationId !== null) cancelAnimationFrame(animationId);
+            animationId = null;
+            animate(0);
+        } else {
+            startLoop();
+        }
     });
 
     // --- Start ---
