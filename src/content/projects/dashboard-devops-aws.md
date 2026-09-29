@@ -1,6 +1,6 @@
 ---
 title: "Dashboard DevOps AWS"
-description: "Monorepo combining a Flask dashboard for visualizing air quality in France and DevOps documentation built with Quartz, featuring automated deployment to AWS (EKS) and Cloudflare Pages."
+description: "Monorepo combining a Flask dashboard for visualizing air quality in France and DevOps documentation built with Quartz, with a GitHub Actions CI/CD pipeline publishing the Docker image to AWS ECR and the docs to Cloudflare Pages."
 ---
 
 <section class="container">
@@ -8,7 +8,7 @@ description: "Monorepo combining a Flask dashboard for visualizing air quality i
 <h1 style="margin-bottom: 1rem;">Dashboard DevOps AWS</h1>
 <p style="color: var(--text-secondary); margin-bottom: 2rem;">
 Monorepo combining a Flask dashboard for visualizing air quality in France and DevOps documentation
-built with Quartz, featuring automated deployment to AWS (EKS) and Cloudflare Pages.
+built with Quartz, with a GitHub Actions CI/CD pipeline publishing the Docker image to AWS ECR and the docs to Cloudflare Pages.
 </p>
 
 <!-- Project Details / Overview -->
@@ -24,8 +24,7 @@ style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; mar
 visualization for air pollution statistics across France.</li>
 <li><strong>Labs Docs:</strong> An internal documentation site built using Quartz to record and
 detail DevOps practices and labs.</li>
-<li><strong>Infrastructure:</strong> Shared Kubernetes (K8s) manifests to orchestrate
-deployments and define the infrastructure as code.</li>
+<li><strong>Infrastructure:</strong> Kubernetes (K8s) manifests for deploying the dashboard.</li>
 </ul>
 </div>
 
@@ -38,8 +37,8 @@ Actions:
 </p>
 <ul
 style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
-<li>The <strong>Air Quality Dashboard</strong> is containerized natively and deployed to a
-managed <strong>AWS Elastic Kubernetes Service (EKS)</strong> cluster.</li>
+<li>The <strong>Air Quality Dashboard</strong> is containerized with Docker; on each push, a GitHub Actions
+workflow builds the image and publishes it to <strong>AWS ECR</strong>.</li>
 <li>The <strong>Labs Documentation</strong> leverages standard static site generation and is
 pushed directly to <strong>Cloudflare Pages</strong> for rapid global edge delivery.</li>
 </ul>
@@ -57,7 +56,7 @@ style="margin-left: 1rem;">View Labs Documentation</a>
 <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg);">
 <h2>Technical Details</h2>
 <ul style="margin-top: 1rem; padding-left: 1.5rem; list-style: disc; color: var(--text-secondary);">
-<li><strong>Technologies:</strong> Flask, AWS EKS, Cloudflare Pages, TypeScript, Docker</li>
+<li><strong>Technologies:</strong> Flask, AWS ECR, Kubernetes, Cloudflare Pages, TypeScript, Docker</li>
 </ul>
 </div>
 </section>

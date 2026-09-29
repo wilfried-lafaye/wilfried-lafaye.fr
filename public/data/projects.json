@@ -90,10 +90,10 @@
     "id": "dashboard-devops-aws",
     "title": "Dashboard DevOps AWS",
     "category": "educational",
-    "description": "Monorepo combining a Flask dashboard for visualizing air quality in France and DevOps documentation built with Quartz, featuring automated deployment to AWS (EKS) and Cloudflare Pages.",
+    "description": "Monorepo combining a Flask dashboard for visualizing air quality in France and DevOps documentation built with Quartz, with a GitHub Actions CI/CD pipeline publishing the Docker image to AWS ECR and the docs to Cloudflare Pages.",
     "technologies": [
       "Flask",
-      "AWS EKS",
+      "AWS ECR",
       "Cloudflare Pages",
       "TypeScript",
       "Docker"
@@ -104,8 +104,8 @@
   {
     "id": "time-groupe-assistant-rag",
     "title": "Time Groupe Assistant RAG",
-    "category": "professional",
-    "description": "An AI assistant leveraging Retrieval-Augmented Generation (RAG) to provide context-aware responses.",
+    "category": "personal",
+    "description": "A demo RAG assistant built to showcase my skills during an interview: context-aware answers from a custom knowledge base.",
     "technologies": [
       "Python",
       "RAG",

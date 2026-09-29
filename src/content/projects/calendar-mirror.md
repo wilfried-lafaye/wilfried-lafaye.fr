@@ -53,15 +53,21 @@ style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; mar
 platforms simultaneously (iCloud, Google, Exchange, Outlook, Local calendars).</li>
 <li><strong>Unified Destination:</strong> Choose a dedicated local destination calendar where
 all copied events will reside cleanly.</li>
-<li><strong>Smart Update Detection:</strong> Employs SHA256 hashing algorithms on event
-properties to meticulously detect changes. Only modified events trigger an overwrite.</li>
+<li><strong>Automatic Sync (macOS):</strong> Listens to calendar changes and mirrors them
+within seconds, with a catch-up sync at launch. No date range to pick: the window is a rolling
+one (90 days back to 3 years ahead), and <em>Launch at Login</em> keeps the app running.</li>
+<li><strong>Smart Incremental Sync (macOS):</strong> Each mirrored event is tracked in a local
+mapping and compared with a SHA256 hash. Only created, modified or deleted events are written;
+a sync with no change writes nothing.</li>
 <li><strong>Recurrence & Deletions:</strong> Gracefully supports recurring events and implements
 safeties algorithms for sweeping orphaned/deleted events.</li>
 <li><strong>100% Local & Private:</strong> Operates entirely on-device using the native Apple
 EventKit framework. There are no external servers, no network calls, and absolutely no data
 collection.</li>
+<li><strong>Shortcuts &amp; Siri:</strong> A "refresh calendars" action (App Intents) on macOS
+and iOS, usable from the Shortcuts app, Siri and Automations.</li>
 <li><strong>Cross-Platform:</strong> Available as a lightweight, unobtrusive macOS menu bar
-utility and a fully localized iOS application.</li>
+utility and an iOS application.</li>
 </ul>
 </div>
 
@@ -78,10 +84,22 @@ style="padding-left: 1.5rem; color: var(--text-secondary); list-style: decimal; 
 <li>Select one or more <strong>Source Calendars</strong> to pull event data from.</li>
 <li>Designate a <strong>Destination Calendar</strong> (creating an empty local calendar is
 standard practice).</li>
-<li>Define a <strong>Synchronization Period</strong> (e.g., from today up to +14 days).</li>
-<li>Initiate <strong>Sync Now</strong>. The app duplicates events accurately and automatically
-propagates future edits or deletions safely.</li>
+<li><strong>macOS:</strong> nothing else to do. The app syncs at launch and whenever a source
+calendar changes, and <strong>Sync Now</strong> (⌘R) is available in the menu bar.</li>
+<li><strong>iOS:</strong> set the <strong>Synchronization Period</strong> (from/to dates, the
+current week by default), then tap <strong>Sync Now</strong>. The app also re-syncs on calendar
+changes while it is open.</li>
 </ol>
+</div>
+
+<!-- AI Assistance -->
+<div style="margin-bottom: 2rem;">
+<h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">AI Assistance</h2>
+<p style="color: var(--text-secondary); margin-bottom: 1rem;">
+This project was developed with the help of an AI coding assistant, <strong>Claude</strong>
+(Anthropic), notably for the macOS automatic synchronization engine and the Shortcuts / App
+Intents support. This is also visible in the repository's commit history.
+</p>
 </div>
 
 <!-- Link to Repo -->
@@ -95,6 +113,7 @@ class="btn-primary">View on GitHub</a>
 <h2>Technical Details</h2>
 <ul style="margin-top: 1rem; padding-left: 1.5rem; list-style: disc; color: var(--text-secondary);">
 <li><strong>Technologies:</strong> Swift, iOS, macOS, EventKit</li>
+<li><strong>Development:</strong> Built with the help of Claude (AI coding assistant)</li>
 </ul>
 </div>
 </section>

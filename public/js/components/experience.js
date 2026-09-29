@@ -1,5 +1,5 @@
 async function loadExperience() {
-  const response = await fetch("data/experience.json?v=6");
+  const response = await fetch("data/experience.json?v=7");
   const data = await response.json();
   const container = document.querySelector("#experience-list");
 

@@ -1,13 +1,13 @@
 ---
 title: "Time Groupe Assistant RAG"
-description: "An AI assistant leveraging Retrieval-Augmented Generation (RAG) to provide context-aware responses."
+description: "A demo RAG assistant built to showcase my skills during an interview."
 ---
 
 <section class="container">
 <div class="glass" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
 <h1 style="margin-bottom: 1rem;">Time Groupe Assistant RAG</h1>
 <p style="color: var(--text-secondary); margin-bottom: 2rem;">
-A virtual AI assistant exploration project leveraging <strong>Retrieval-Augmented Generation
+A personal demo project, built to showcase my skills during an interview, leveraging <strong>Retrieval-Augmented Generation
 (RAG)</strong> technology to provide context-aware responses based on a custom knowledge base.
 </p>
 
@@ -15,12 +15,12 @@ A virtual AI assistant exploration project leveraging <strong>Retrieval-Augmente
 <div style="margin-bottom: 2rem;">
 <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Overview & Discovery</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-This repository serves as a practical discovery and implementation of modern
-<strong>RAG</strong> architectures. It was built specifically to act as a virtual assistant for
-<a href="https://timegroupe.ca" target="_blank"
+This repository is a practical discovery and implementation of modern
+<strong>RAG</strong> architectures. It is a demo built to showcase my skills during an interview
+with <a href="https://timegroupe.ca" target="_blank"
 style="color: var(--primary); text-decoration: underline;">Time Groupe</a>, an event
-management company based in Montreal. By vectorizing their operational data, the assistant
-answers highly specific questions accurately without hallucinating.
+management company based in Montreal; it was not a deliverable for the company. The assistant
+vectorizes a small text knowledge base about the company and answers questions from it.
 </p>
 </div>
 
@@ -47,7 +47,7 @@ generative aspect of the responses based on retrieved context.</li>
 <ul
 style="padding-left: 1.5rem; color: var(--text-secondary); list-style: disc; margin-bottom: 1rem;">
 <li><strong>Knowledge Base:</strong> A raw text data file (<code>time_groupe_info.txt</code>)
-acts as the company's single source of truth.</li>
+acts as the assistant's single source of truth.</li>
 <li><strong>RAG Engine:</strong> The <code>rag_engine.py</code> module is responsible for
 loading the text, chunking it into processable segments, storing it semantically in
 ChromaDB, and executing the similarity search retrieval.</li>
