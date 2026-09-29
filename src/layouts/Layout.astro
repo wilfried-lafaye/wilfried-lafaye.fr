@@ -15,11 +15,13 @@ const { title, description } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+		<script is:inline>document.documentElement.classList.add('js');</script>
 	</head>
 	<body>
-		<canvas id="neural-canvas"></canvas>
+		<a class="skip-link" href="#main">Skip to content</a>
+		<canvas id="neural-canvas" aria-hidden="true"></canvas>
 		<Header />
-		<main>
+		<main id="main" tabindex="-1">
 			<slot />
 		</main>
 		<Footer />

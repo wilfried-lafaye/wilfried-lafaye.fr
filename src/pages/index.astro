@@ -2,19 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Wilfried Lafaye | AI & Data Science Portfolio" description="Portfolio of Wilfried Lafaye. A Data Scientist & AI Engineer building the next generation of intelligent systems through interactive dashboards, AI models, and web applications.">
+<Layout title="Wilfried Lafaye | AI & Data Science Portfolio" description="Portfolio of Wilfried Lafaye. Data Science & AI engineering student building data and AI applications: interactive dashboards, AI models, and web applications.">
 	<section id="hero" class="hero-section">
       <div class="hero-content">
         <span class="badge">Portfolio 2026</span>
         <h1>Crafting Intelligence <br> <span class="text-gradient">with Data & Code</span></h1>
-        <p>Hi, I'm <strong>Wilfried Lafaye</strong>. <br> A Data Scientist & AI Engineer building the next generation of
-          intelligent systems.</p>
+        <p>Hi, I'm <strong>Wilfried Lafaye</strong>. <br> A Data Science & AI engineering student building data and AI
+          applications.</p>
         <div class="hero-actions">
           <a href="/projects.html" class="btn-primary">View Work</a>
-          <a href="https://github.com/wilfried-lafaye" target="_blank" class="btn-secondary">GitHub</a>
+          <a href="https://github.com/wilfried-lafaye" target="_blank" rel="noopener noreferrer" class="btn-secondary">GitHub</a>
         </div>
       </div>
-      <div class="hero-visual">
+      <div class="hero-portrait">
+        <img src="/img/wilfried-lafaye.jpg" alt="Portrait of Wilfried Lafaye" width="720" height="960" fetchpriority="high" decoding="async">
+      </div>
+      <div class="hero-visual" aria-hidden="true">
         <div class="glow-orb"></div>
       </div>
     </section>
@@ -59,11 +62,11 @@ import Layout from '../layouts/Layout.astro';
     <section id="contact" class="section">
       <div class="centered glass">
         <h2>Get In Touch</h2>
-        <p style="color: var(--text-secondary); margin-top: 1rem;">Interested in collaborating or just want to say hi? Feel free to reach out.</p>
+        <p class="contact-lead">Interested in collaborating or just want to say hi? Feel free to reach out.</p>
         <div class="contact-links">
 
-          <a href="https://github.com/wilfried-lafaye" target="_blank" class="contact-item btn-secondary" aria-label="View GitHub profile">💻 GitHub</a>
-          <a href="https://linkedin.com/in/wilfried-lafaye" target="_blank" class="contact-item btn-secondary" aria-label="View LinkedIn profile">🔗 LinkedIn</a>
+          <a href="https://github.com/wilfried-lafaye" target="_blank" rel="noopener noreferrer" class="contact-item btn-secondary" aria-label="View GitHub profile"><span aria-hidden="true">💻</span> GitHub</a>
+          <a href="https://linkedin.com/in/wilfried-lafaye" target="_blank" rel="noopener noreferrer" class="contact-item btn-secondary" aria-label="View LinkedIn profile"><span aria-hidden="true">🔗</span> LinkedIn</a>
         </div>
       </div>
     </section>
